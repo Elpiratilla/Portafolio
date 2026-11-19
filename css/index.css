@@ -45,11 +45,6 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--a);outline-offset:3
 .links a{display:inline-flex;align-items:center;min-height:44px}
 .empty{padding:40px 0;color:var(--muted)}
 
-.about{padding:48px 0 12px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.who{border-top:5px solid var(--c);padding-top:12px}
-.who.a{--c:var(--a)} .who.b{--c:var(--b)}
-.who h3{font-size:1.4rem;font-weight:800}
-.who p{margin:6px 0 0;color:var(--muted)}
 footer{padding:32px 0 48px;color:var(--muted);font-size:.95rem}
 footer button{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 14px;min-height:44px;cursor:pointer;margin-top:10px}
 
@@ -72,7 +67,54 @@ footer button{font:inherit;color:var(--ink);background:var(--surface);border:1px
   .by,.row p.desc,.tags,.links{grid-column:1 / -1}
   .by{margin-top:2px}
 
-  .about{grid-template-columns:1fr;padding-top:32px}
   footer{padding:24px 0 40px}
 }
+
+/* ===== Navegación rápida ===== */
+.nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid var(--line);background:var(--surface);border-radius:999px;font-weight:500;font-size:.95rem;text-decoration:none}
+.nav a:hover{border-color:var(--ink)}
+
+/* ===== Apartado de cada persona ===== */
+.persona{--c:var(--a);--c-soft:var(--a-soft);display:grid;grid-template-columns:160px 1fr;gap:28px;border-top:5px solid var(--c);padding:24px 0 44px}
+.persona.b{--c:var(--b);--c-soft:var(--b-soft)}
+.foto{width:160px;height:160px;border-radius:12px;object-fit:cover;background:var(--c-soft);color:var(--c);display:grid;place-items:center;font:800 3.2rem "Bricolage Grotesque",system-ui,sans-serif}
+.persona h3{font-size:2rem;font-weight:800;letter-spacing:-.02em}
+.persona .rol{margin:6px 0 0;color:var(--c);font-weight:600}
+.persona .sobre{margin:12px 0 0;color:var(--muted);max-width:60ch}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px 32px;margin-top:22px}
+.cols h4{font:700 1.05rem "Bricolage Grotesque",system-ui,sans-serif;margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0}
+.chips li{background:var(--c-soft);border-radius:6px;padding:3px 10px;font-size:.9rem;font-weight:500}
+.item{border-left:2px solid var(--c);padding:0 0 0 12px;margin:0 0 12px}
+.item strong{display:block}
+.item span{display:block;font-size:.88rem;color:var(--muted)}
+.contact{list-style:none;padding:0;margin:0;display:grid;gap:2px}
+.contact a{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+.contact span{color:var(--muted);margin-right:6px}
+@media (max-width:640px){
+  .persona{grid-template-columns:1fr;gap:16px;padding-bottom:32px}
+  .foto{width:96px;height:96px;font-size:2.2rem}
+  .persona h3{font-size:1.6rem}
+}
+
+/* ===== Inicio: acceso a cada perfil ===== */
+.quienes{padding:48px 0 12px}
+.quienes>h2{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:800;letter-spacing:-.02em;margin-bottom:20px}
+.pl-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pl{--c:var(--a);--c-soft:var(--a-soft);display:flex;align-items:center;gap:14px;border-top:5px solid var(--c);padding:16px 0;min-height:44px;text-decoration:none}
+.pl.b{--c:var(--b);--c-soft:var(--b-soft)}
+.pl .mini{flex:0 0 auto;width:56px;height:56px;border-radius:10px;object-fit:cover;background:var(--c-soft);color:var(--c);display:grid;place-items:center;font:800 1.4rem "Bricolage Grotesque",system-ui,sans-serif}
+.pl strong{display:block;font-size:1.15rem}
+.pl small{color:var(--muted);font-size:.9rem}
+.pl:hover strong{text-decoration:underline}
+
+/* ===== Página de perfil ===== */
+.top{padding:20px 0 0}
+.back{display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+.persona{margin-top:12px}
+.mis{padding:8px 0}
+.mis>h2{font-size:clamp(1.6rem,4.5vw,2.2rem);font-weight:800;letter-spacing:-.02em;margin:0 0 16px}
+.otro{display:inline-flex;align-items:center;min-height:44px;font-weight:600;margin:20px 0 8px}
+@media (max-width:640px){.pl-grid{grid-template-columns:1fr;gap:8px}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
