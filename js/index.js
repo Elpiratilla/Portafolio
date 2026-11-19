@@ -9,7 +9,7 @@ const DATA = {
   proyectos: [
     { titulo: "Go 503", quien: "a", desc: "Proyecto de rastreo de autobuses para saber a qué hora llegan y por donde pasan.", tags: ["HTML", "CSS", "JavaScript", "Node.js"," SQL"], demo: "https://go503.onrender.com", codigo: "https://github.com/Elpiratilla/bus-tracker.git" },
     { titulo: "Sin límites", quien: "a", desc: "Proyecto para promover la inclusión digital ganador del primer lugar de Crea-j.", tags: ["HTML", "CSS", "JavaScript", "PHP" ], demo: "https://sinlimites.lat/Inicio", codigo: "https://github.com/Elpiratilla/paginacrea1.git" },
-    { titulo: "Blue's", quien: "b", desc: "Proyecto musicoterapia ganador del segundo lugar de Crea-j.", tags: ["HTML", "CSS", "JavaScript"], demo: "", codigo: "https://github.com/alem3jia774-byte/BLUES.git" }
+    { titulo: "Blue's", quien: "b", desc: "Proyecto musicoterapia ganador del segundo lugar de Crea-j.", tags: ["HTML", "CSS", "JavaScript","PHP"], demo: "", codigo: "https://github.com/alem3jia774-byte/BLUES.git" }
   ],
   contacto: "Escríbenos a correo@ejemplo.com"
 };
