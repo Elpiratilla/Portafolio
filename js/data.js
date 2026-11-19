@@ -9,7 +9,7 @@ const DATA = {
       rol: "Front end y Back end",
       foto: "", // ejemplo: "img/mateo.jpg" (si queda vacío se muestran las iniciales)
       sobre: "Escribe aquí 2 o 3 líneas sobre ti: qué te gusta construir, qué estás aprendiendo y qué buscas.",
-      habilidades: ["HTML", "CSS", "JavaScript", "Node.js", "SQL", "PHP"],
+      habilidades: ["HTML", "CSS", "JavaScript", "SQL", "PHP"],
       formacion: [
         { titulo: "Carrera: Desarrollo de software", lugar: "Colegio Don Bosco", fecha: "2016 – actualidad" }
       ],
