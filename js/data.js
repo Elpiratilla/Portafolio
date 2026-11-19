@@ -23,7 +23,7 @@ const DATA = {
       pagina: "/persona2.html",
       rol: "Front end y Back end",
       foto: "", // ejemplo: "img/iker.jpg"
-      sobre: "Escribe aquí 2 o 3 líneas sobre ti: qué te gusta construir, qué estás aprendiendo y qué buscas.",
+      sobre: "alo, soy Iker, me gusta aprender cosas nuevas y me interesa la programación y el desarrollo web. Estoy aprendiendo a crear aplicaciones web y móviles, y busco oportunidades para mejorar mis habilidades y trabajar en proyectos interesantes.",
       habilidades: ["HTML", "CSS", "JavaScript", "SQL", "PHP"],
       formacion: [
         { titulo: "Carrera: Desarrollo de software", lugar: "Colegio Don Bosco", fecha: "2014 – actualidad" }
