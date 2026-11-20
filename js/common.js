@@ -8,9 +8,10 @@ const byLabel = k => k === "j" ? "Hecho por los dos" : "Hecho por " + P[k].nombr
 
 function proyectoHTML(p){
   return `
-  <article class="row" data-who="${p.quien}">
+  <article class="row${p.img ? " has-shot" : ""}" data-who="${p.quien}">
     <div class="tile" aria-hidden="true">${esc(p.titulo.charAt(0))}</div>
     <div>
+      ${p.img ? `<img class="shot" src="${esc(p.img)}" alt="Captura de ${esc(p.titulo)}" loading="lazy">` : ""}
       <h2>${esc(p.titulo)}</h2>
       <p class="by">${esc(byLabel(p.quien))}</p>
       <p class="desc">${esc(p.desc)}</p>
