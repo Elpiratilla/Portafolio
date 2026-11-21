@@ -94,3 +94,9 @@ $("form").addEventListener("submit", async e => {
     estado("Se abrió tu aplicación de correo con el mensaje listo para enviar.");
   }
 });
+/* El botón flotante de WhatsApp se oculta cuando el formulario está en pantalla, para que no tape el botón "Enviar" */
+const wa = document.querySelector(".wa");
+if (wa && "IntersectionObserver" in window) {
+  new IntersectionObserver(([en]) => wa.classList.toggle("oculto", en.isIntersecting), { rootMargin: "0px 0px -10% 0px" })
+    .observe($("form"));
+}
