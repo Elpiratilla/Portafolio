@@ -53,12 +53,6 @@ $("contacto").innerHTML = `<h2>Cuéntanos tu idea</h2>
   <form id="form" novalidate>
     <label>Tu nombre<input name="nombre" required autocomplete="name"></label>
     <label>Tu correo<input name="correo" type="email" required autocomplete="email"></label>
-    <label>¿A quién le escribes?
-      <select name="para">
-        <option value="j">A los dos</option>
-        <option value="a">${esc(P.a.nombre)}</option>
-        <option value="b">${esc(P.b.nombre)}</option>
-      </select>
     </label>
     <label>Mensaje<textarea name="mensaje" rows="5" required></textarea></label>
     <button type="submit">Enviar mensaje</button>
