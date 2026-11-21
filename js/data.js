@@ -9,7 +9,7 @@ const DATA = {
       pagina: "persona1.html",
       rol: "Desarrollo frontend y backend",
       foto: "img/mateo.webp", 
-      sobre: "Me gusta construir páginas y sistemas web que resuelvan algo real. En Go 503 rastreo buses para saber a qué hora llegan, y con Sin límites trabajé en inclusión digital. Sigo aprendiendo Node.js y bases de datos, y busco proyectos donde pueda seguir creciendo.",
+      sobre: "Me gusta crear páginas y sistemas web que tengan un propósito y puedan ayudar a las personas. He tenido la oportunidad de trabajar en proyectos como Go 503, donde ayudé a desarrollar una forma de rastrear buses y conocer sus horarios de llegada, y Sin Límites, un proyecto relacionado con la inclusión digital. Me gusta seguir aprendiendo y mejorar mis habilidades, actualmente estoy explorando Node.js y bases de datos. Mi objetivo es seguir ganando experiencia, trabajar en nuevos proyectos y crecer poco a poco como desarrollador.",
       habilidades: ["HTML", "CSS", "JavaScript", "Node.js", "SQL", "PHP"],
       formacion: [
         { titulo: "Carrera: Desarrollo de software", lugar: "Colegio Don Bosco", fecha: "2016 – actualidad" }
