@@ -8,8 +8,7 @@ const DATA = {
       nombre: "Mateo Lara",
       pagina: "persona1.html",
       rol: "Desarrollo frontend y backend",
-      foto: "", // ejemplo: "img/mateo.jpg" (si queda vacío se muestran las iniciales)
-      // BORRADOR: cámbialo por tus propias palabras
+      foto: "img/mateo.webp", 
       sobre: "Me gusta construir páginas y sistemas web que resuelvan algo real. En Go 503 rastreo buses para saber a qué hora llegan, y con Sin límites trabajé en inclusión digital. Sigo aprendiendo Node.js y bases de datos, y busco proyectos donde pueda seguir creciendo.",
       habilidades: ["HTML", "CSS", "JavaScript", "Node.js", "SQL", "PHP"],
       formacion: [
