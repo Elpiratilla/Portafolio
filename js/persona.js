@@ -13,7 +13,7 @@ $("perfil").innerHTML = `
   <article class="persona ${k}">
     ${foto}
     <div>
-      <h1 style="font:800 2rem/1.05 'Bricolage Grotesque',system-ui,sans-serif;letter-spacing:-.02em;margin:0">${esc(p.nombre)}</h1>
+      <h1>${esc(p.nombre)}</h1>
       <p class="rol">${esc(p.rol)}</p>
       <p class="sobre">${esc(p.sobre)}</p>
       <div class="cols">

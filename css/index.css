@@ -88,7 +88,7 @@ img{max-width:100%}
 .persona{--c:var(--a);--c-soft:var(--a-soft);display:grid;grid-template-columns:160px 1fr;gap:32px;margin-top:12px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:var(--r);padding:28px}
 .persona.b{--c:var(--b);--c-soft:var(--b-soft)}
 .foto{width:160px;height:160px;border-radius:14px;object-fit:cover;background:var(--c-soft);color:var(--c);display:grid;place-items:center;font:800 3.2rem "Bricolage Grotesque",system-ui,sans-serif}
-.persona h3{font-size:2rem;font-weight:800;letter-spacing:-.02em}
+.persona h1{font-size:2rem;font-weight:800;letter-spacing:-.02em}
 .persona .rol{margin:6px 0 0;color:var(--c);font-weight:600}
 .persona .sobre{margin:12px 0 0;color:var(--muted);max-width:60ch}
 .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px 32px;margin-top:24px}
@@ -142,9 +142,44 @@ footer button{font:inherit;color:var(--ink);background:var(--surface);border:1px
   .pl-grid{grid-template-columns:1fr;gap:12px}
   .persona{grid-template-columns:1fr;gap:16px;padding:20px}
   .foto{width:96px;height:96px;font-size:2.2rem}
-  .persona h3{font-size:1.6rem}
+  .persona h1{font-size:1.6rem}
 
   footer{padding:24px 0 40px}
+}
+
+
+/* ===== Saltar al contenido (visible solo con teclado) ===== */
+.skip{position:absolute;left:12px;top:-60px;z-index:20;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:600;text-decoration:none}
+.skip:focus{top:calc(env(safe-area-inset-top,0px) + 12px)}
+
+/* ===== Etiqueta de premio en proyectos ===== */
+.award{grid-column:1 / -1;justify-self:start;margin:14px 0 0;padding:4px 12px;border-radius:8px;background:var(--c-soft);color:var(--c);font-size:.9rem;font-weight:600}
+
+/* ===== Servicios ===== */
+.servicios{padding:72px 0 12px}
+.servicios>h2,.contacto>h2{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:800;letter-spacing:-.02em;margin-bottom:20px}
+.srv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.srv{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--ink);border-radius:var(--r);padding:20px}
+.srv h3{font-size:1.2rem;font-weight:800;letter-spacing:-.01em}
+.srv p{margin:10px 0 0;color:var(--muted)}
+
+/* ===== Contacto ===== */
+.contacto{padding:72px 0 12px}
+.c-intro{margin:0 0 20px;color:var(--muted);max-width:58ch}
+#form{display:grid;gap:16px;max-width:560px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--ink);border-radius:var(--r);padding:24px}
+#form label{display:grid;gap:6px;font-weight:600;font-size:.95rem}
+#form input,#form select,#form textarea{font:400 1rem "Instrument Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-height:44px;width:100%}
+#form textarea{resize:vertical}
+#form input:focus-visible,#form select:focus-visible,#form textarea:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+#form button{justify-self:start;font:600 .95rem "Instrument Sans",system-ui,sans-serif;color:var(--bg);background:var(--ink);border:1.5px solid var(--ink);border-radius:10px;padding:0 22px;min-height:44px;cursor:pointer}
+#form button:hover{background:var(--j-soft);color:var(--ink)}
+#estado{margin:0;min-height:1.5em;color:var(--muted);font-size:.95rem}
+
+@media (max-width:860px){.srv-grid{grid-template-columns:1fr}}
+@media (max-width:640px){
+  .servicios,.contacto{padding-top:48px}
+  #form{padding:18px}
+  #form button{justify-self:stretch}
 }
 
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}

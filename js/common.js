@@ -4,6 +4,7 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":
 const P = DATA.personas;
 const primerNombre = n => n.split(" ")[0];
 const iniciales = n => n.split(" ").map(x => x.charAt(0)).join("").slice(0, 2).toUpperCase();
+const correoDe = k => (P[k].contacto.find(c => c.etiqueta === "Correo") || {}).valor || "";
 const byLabel = k => k === "j" ? "Hecho por los dos" : "Hecho por " + P[k].nombre;
 
 function proyectoHTML(p){
@@ -14,6 +15,7 @@ function proyectoHTML(p){
       ${p.img ? `<img class="shot" src="${esc(p.img)}" alt="Captura de ${esc(p.titulo)}" loading="lazy">` : ""}
       <h2>${esc(p.titulo)}</h2>
       <p class="by">${esc(byLabel(p.quien))}</p>
+      ${p.premio ? `<p class="award">${esc(p.premio)}</p>` : ""}
       <p class="desc">${esc(p.desc)}</p>
       <ul class="tags">${p.tags.map(t => `<li>${esc(t)}</li>`).join("")}</ul>
       <div class="links">${p.demo ? `<a href="${esc(p.demo)}">Ver demo</a>` : ""}${p.codigo ? `<a href="${esc(p.codigo)}">Ver código</a>` : ""}</div>
@@ -21,7 +23,7 @@ function proyectoHTML(p){
   </article>`;
 }
 
-$("foot").textContent = DATA.contacto;
+$("foot").textContent = DATA.pie;
 $("theme").addEventListener("click", () => {
   const r = document.documentElement;
   const dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;

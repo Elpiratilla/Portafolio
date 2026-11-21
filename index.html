@@ -3,31 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Portafolio</title>
+<title>Portafolio · Mateo Lara e Iker Mejia</title>
+<meta name="description" content="Portafolio de Mateo Lara e Iker Mejia, estudiantes de desarrollo de software en El Salvador. Sitios web y sistemas a la medida con HTML, CSS, JavaScript, Node.js, PHP y SQL.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Portafolio · Mateo Lara e Iker Mejia">
+<meta property="og:description" content="Proyectos de desarrollo web hechos por dos estudiantes salvadoreños. Mira lo que hemos construido y cuéntanos tu idea.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='16' height='32' fill='%232447d6'/%3E%3Crect x='16' width='16' height='32' fill='%230d7f64'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-<header class="wrap hero">
-  <h1 id="titulo"></h1>
-  <p id="intro"></p>
-</header>
+<a class="skip" href="#main">Saltar al contenido</a>
 
-<main class="wrap">
-  <div class="filters" id="filters" role="group" aria-label="Filtrar proyectos"></div>
-  <div class="list" id="list" aria-live="polite"></div>
-  <section class="quienes" id="quienes"></section>
-</main>
+<div id="vista-home">
+  <header class="wrap hero">
+    <h1 id="titulo"></h1>
+    <p id="intro"></p>
+  </header>
+  <main class="wrap" id="main">
+    <div class="filters" id="filters" role="group" aria-label="Filtrar proyectos"></div>
+    <div class="list" id="list" aria-live="polite"></div>
+    <section class="quienes" id="quienes"></section>
+    <section class="servicios" id="servicios"></section>
+    <section class="contacto" id="contacto"></section>
+  </main>
+</div>
+
+<div id="vista-perfil" hidden>
+  <header class="wrap top">
+    <a class="back" href="/index.html">Volver al portafolio</a>
+  </header>
+  <main class="wrap">
+    <div id="perfil"></div>
+    <section class="mis">
+      <h2 id="perfil-titulo"></h2>
+      <div class="list" id="perfil-list"></div>
+    </section>
+    <a class="otro" id="perfil-otro" href="index.html"></a>
+  </main>
+</div>
 
 <footer class="wrap">
   <div id="foot"></div>
   <button type="button" id="theme">Cambiar tema</button>
 </footer>
-
-<script src="/js/data.js"></script>
-<script src="/js/common.js"></script>
-<script src="/js/index.js"></script>
+<script src="js/data.js"></script>
+<script src="js/common.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

@@ -1,15 +1,17 @@
-/* ===== AQUÍ SE EDITA TODO: nombres, proyectos y contacto ===== */
+/* ===== AQUÍ SE EDITA TODO: nombres, proyectos, servicios y contacto ===== */
 const DATA = {
   titulo: "Nuestro portafolio",
   intro: "Proyectos de desarrollo web que hemos construido, juntos y por separado. Cada color indica quién lo hizo.",
+
   personas: {
     a: {
       nombre: "Mateo Lara",
-      pagina: "/persona1.html",
+      pagina: "persona1.html",
       rol: "Front end y Back end",
       foto: "", // ejemplo: "img/mateo.jpg" (si queda vacío se muestran las iniciales)
-      sobre: "Escribe aquí 2 o 3 líneas sobre ti: qué te gusta construir, qué estás aprendiendo y qué buscas.",
-      habilidades: ["HTML", "CSS", "JavaScript", "SQL", "PHP"],
+      // BORRADOR: cámbialo por tus propias palabras
+      sobre: "Me gusta construir páginas y sistemas web que resuelvan algo real. En Go 503 rastreo buses para saber a qué hora llegan, y con Sin límites trabajé en inclusión digital. Sigo aprendiendo Node.js y bases de datos, y busco proyectos donde pueda seguir creciendo.",
+      habilidades: ["HTML", "CSS", "JavaScript", "Node.js", "SQL", "PHP"],
       formacion: [
         { titulo: "Carrera: Desarrollo de software", lugar: "Colegio Don Bosco", fecha: "2016 – actualidad" }
       ],
@@ -20,10 +22,10 @@ const DATA = {
     },
     b: {
       nombre: "Iker Mejia",
-      pagina: "/persona2.html",
+      pagina: "persona2.html",
       rol: "Front end y Back end",
       foto: "", // ejemplo: "img/iker.jpg"
-      sobre: "alo, soy Iker, me gusta aprender cosas nuevas y me interesa la programación y el desarrollo web. Estoy aprendiendo a crear aplicaciones web y móviles, y busco oportunidades para mejorar mis habilidades y trabajar en proyectos interesantes.",
+      sobre: "Hola, soy Iker. Me gusta aprender cosas nuevas y me interesan la programación y el desarrollo web. Estoy aprendiendo a crear aplicaciones web y móviles, y busco oportunidades para mejorar mis habilidades y trabajar en proyectos interesantes.",
       habilidades: ["HTML", "CSS", "JavaScript", "SQL", "PHP"],
       formacion: [
         { titulo: "Carrera: Desarrollo de software", lugar: "Colegio Don Bosco", fecha: "2014 – actualidad" }
@@ -33,12 +35,45 @@ const DATA = {
         { etiqueta: "GitHub", valor: "github.com/alem3jia774-byte", href: "https://github.com/alem3jia774-byte" }
       ]
     }
-    },
+  },
 
-    proyectos: [
-    { titulo: "Go 503", quien: "a", desc: "Proyecto de rastreo de autobuses para saber a qué hora llegan y por donde pasan.", tags: ["HTML", "CSS", "JavaScript", "Node.js", "SQL"], demo: "https://go503.onrender.com", codigo: "https://github.com/Elpiratilla/bus-tracker" },
-    { titulo: "Sin límites", quien: "a", desc: "Proyecto para promover la inclusión digital Ganador del primer lugar en crea j Colegio Don Bosco bachiller primer año.", tags: ["HTML", "CSS", "JavaScript", "PHP"], demo: "https://sinlimites.lat/Inicio", codigo: "https://github.com/Elpiratilla/paginacrea1" },
-    { titulo: "Blue's", quien: "b", desc: "Proyecto de musicoterapia Ganador de segundo lugar en crea j Colegio Don Bosco bachiller primer año.", tags: ["HTML", "CSS", "JavaScript"], demo: "", codigo: "https://github.com/alem3jia774-byte/BLUES" }
-    ],
-    contacto: "Escríbenos a correo@ejemplo.com"
+  /* quien: "a" = Mateo, "b" = Iker, "j" = los dos
+     img: ruta de una captura, ejemplo "img/go503.png" (16:9). Si queda vacío no se muestra.
+     premio: se muestra como etiqueta destacada (déjalo vacío si no aplica) */
+  proyectos: [
+    {
+      titulo: "Go 503", quien: "a", img: "",
+      desc: "Rastreo de autobuses para saber a qué hora llegan y por dónde pasan.",
+      premio: "",
+      tags: ["HTML", "CSS", "JavaScript", "Node.js", "SQL"],
+      demo: "https://go503.onrender.com", codigo: "https://github.com/Elpiratilla/bus-tracker"
+    },
+    {
+      titulo: "Sin límites", quien: "a", img: "",
+      desc: "Proyecto para promover la inclusión digital.",
+      premio: "1.er lugar · CREA J · Colegio Don Bosco (primer año de bachillerato)",
+      tags: ["HTML", "CSS", "JavaScript", "PHP"],
+      demo: "https://sinlimites.lat/Inicio", codigo: "https://github.com/Elpiratilla/paginacrea1"
+    },
+    {
+      titulo: "Blue's", quien: "b", img: "",
+      desc: "Proyecto de musicoterapia.",
+      premio: "2.º lugar · CREA J · Colegio Don Bosco (primer año de bachillerato)",
+      tags: ["HTML", "CSS", "JavaScript"],
+      demo: "", codigo: "https://github.com/alem3jia774-byte/BLUES"
+    }
+  ],
+
+  servicios: [
+    { titulo: "Páginas web para negocios", desc: "Sitio de una o varias páginas que se ve bien en celular y presenta tu negocio, tus productos y cómo contactarte." },
+    { titulo: "Sistemas a la medida", desc: "Registro de clientes, inventario, reservas o control de tiempo, con base de datos y panel para administrarlo." },
+    { titulo: "Mejora de un sitio existente", desc: "Ordenamos el diseño, lo hacemos responsive y corregimos lo que no funciona en tu página actual." }
+  ],
+
+  contacto: {
+    texto: "Cuéntanos qué necesitas y te respondemos por correo.",
+    formspree: "https://formspree.io/f/xwlonoye"
+  },
+
+  pie: "Mateo Lara e Iker Mejia"
 };
