@@ -60,7 +60,7 @@ const DATA = {
       desc: "Proyecto de musicoterapia.",
       premio: "2.º lugar · CREA J · Colegio Don Bosco (primer año de bachillerato)",
       tags: ["HTML", "CSS", "JavaScript"],
-      demo: "", codigo: "https://github.com/alem3jia774-byte/BLUES"
+      demo: "https://blues-kniw.onrender.com/start.html", codigo: "https://github.com/alem3jia774-byte/BLUES"
     }
   ],
 
