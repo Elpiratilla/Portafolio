@@ -29,3 +29,15 @@ $("theme").addEventListener("click", () => {
   const dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
   r.dataset.theme = dark ? "light" : "dark";
 });
+
+/* ===== WhatsApp: botón flotante (se oculta si no hay número en data.js) ===== */
+const WA = DATA.whatsapp || {};
+const waNum = String(WA.numero || "").replace(/\D/g, "");
+const waLink = waNum ? "https://wa.me/" + waNum + "?text=" + encodeURIComponent(WA.mensaje || "") : "";
+if (waLink) {
+  document.body.insertAdjacentHTML("beforeend",
+    `<a class="wa" href="${esc(waLink)}" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/></svg>
+      <span>WhatsApp</span>
+    </a>`);
+} 

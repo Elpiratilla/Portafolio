@@ -8,6 +8,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Portafolio · Mateo Lara e Iker Mejia">
 <meta property="og:description" content="Proyectos de desarrollo web hechos por dos estudiantes salvadoreños. Mira lo que hemos construido y cuéntanos tu idea.">
+<!-- Para que se vea una imagen al compartir el enlace, agrega aquí: <meta property="og:image" content="https://TU-DOMINIO/img/portada.png"> -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='16' height='32' fill='%232447d6'/%3E%3Crect x='16' width='16' height='32' fill='%230d7f64'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,39 +17,26 @@
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
+<header class="wrap hero">
+  <h1 id="titulo"></h1>
+  <p id="intro"></p>
+</header>
 
-<div id="vista-home">
-  <header class="wrap hero">
-    <h1 id="titulo"></h1>
-    <p id="intro"></p>
-  </header>
-  <main class="wrap" id="main">
-    <div class="filters" id="filters" role="group" aria-label="Filtrar proyectos"></div>
-    <div class="list" id="list" aria-live="polite"></div>
-    <section class="quienes" id="quienes"></section>
-    <section class="servicios" id="servicios"></section>
-    <section class="contacto" id="contacto"></section>
-  </main>
-</div>
-
-<div id="vista-perfil" hidden>
-  <header class="wrap top">
-    <a class="back" href="/index.html">Volver al portafolio</a>
-  </header>
-  <main class="wrap">
-    <div id="perfil"></div>
-    <section class="mis">
-      <h2 id="perfil-titulo"></h2>
-      <div class="list" id="perfil-list"></div>
-    </section>
-    <a class="otro" id="perfil-otro" href="index.html"></a>
-  </main>
-</div>
+<main class="wrap" id="main">
+  <div class="filters" id="filters" role="group" aria-label="Filtrar proyectos"></div>
+  <div class="list" id="list" aria-live="polite"></div>
+  <section class="quienes" id="quienes"></section>
+  <section class="servicios" id="servicios"></section>
+  <section class="proceso" id="proceso"></section>
+  <section class="faq" id="faq"></section>
+  <section class="contacto" id="contacto"></section>
+</main>
 
 <footer class="wrap">
   <div id="foot"></div>
   <button type="button" id="theme">Cambiar tema</button>
 </footer>
+
 <script src="js/data.js"></script>
 <script src="js/common.js"></script>
 <script src="js/index.js"></script>

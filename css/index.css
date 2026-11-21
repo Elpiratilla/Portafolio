@@ -182,4 +182,37 @@ footer button{font:inherit;color:var(--ink);background:var(--surface);border:1px
   #form button{justify-self:stretch}
 }
 
+
+/* ===== Cómo trabajamos ===== */
+.proceso,.faq{padding:72px 0 12px}
+.proceso>h2,.faq>h2{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:800;letter-spacing:-.02em;margin-bottom:20px}
+.pasos{list-style:none;counter-reset:paso;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;padding:0;margin:0}
+.pasos li{counter-increment:paso;position:relative;padding-top:44px;border-top:3px solid var(--ink)}
+.pasos li::before{content:counter(paso);position:absolute;top:8px;left:0;font:800 1.5rem "Bricolage Grotesque",system-ui,sans-serif}
+.pasos h3{font-size:1.15rem;font-weight:800}
+.pasos p{margin:8px 0 0;color:var(--muted)}
+
+/* ===== Preguntas frecuentes ===== */
+.faq-list{max-width:760px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px;padding:12px 0;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:500 1.5rem/1 "Instrument Sans",system-ui,sans-serif;color:var(--muted);flex:0 0 auto}
+.faq details[open] summary::after{content:"\2212"}
+.faq summary:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+.faq details p{margin:0 0 16px;color:var(--muted);max-width:62ch}
+
+/* ===== Botón flotante de WhatsApp ===== */
+.wa{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:15;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 18px;border-radius:999px;background:#1a7f45;color:#fff;font-weight:600;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.wa:hover{background:#146636}
+.wa:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+@media (max-width:860px){.pasos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){
+  .proceso,.faq{padding-top:48px}
+  .pasos{grid-template-columns:1fr}
+  .wa span{display:none}
+  .wa{padding:0 14px}
+}
+
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}

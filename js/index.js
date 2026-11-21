@@ -38,10 +38,18 @@ $("quienes").innerHTML = `<h2>Quiénes somos</h2><div class="pl-grid">` + ["a","
 $("servicios").innerHTML = `<h2>Qué podemos hacer por ti</h2>
   <div class="srv-grid">${DATA.servicios.map(x => `<article class="srv"><h3>${esc(x.titulo)}</h3><p>${esc(x.desc)}</p></article>`).join("")}</div>`;
 
+/* ===== Cómo trabajamos (es una secuencia, por eso va numerado) ===== */
+$("proceso").innerHTML = `<h2>Cómo trabajamos</h2>
+  <ol class="pasos">${DATA.proceso.map(x => `<li><h3>${esc(x.titulo)}</h3><p>${esc(x.desc)}</p></li>`).join("")}</ol>`;
+
+/* ===== Preguntas frecuentes ===== */
+$("faq").innerHTML = `<h2>Preguntas frecuentes</h2>
+  <div class="faq-list">${DATA.faq.map(x => `<details><summary>${esc(x.p)}</summary><p>${esc(x.r)}</p></details>`).join("")}</div>`;
+
 /* ===== Contacto ===== */
 const C = DATA.contacto;
 $("contacto").innerHTML = `<h2>Cuéntanos tu idea</h2>
-  <p class="c-intro">${esc(C.texto)}</p>
+  <p class="c-intro">${esc(C.texto)}${waLink ? ` También puedes <a href="${esc(waLink)}" target="_blank" rel="noopener">escribirnos por WhatsApp</a>.` : ""}</p>
   <form id="form" novalidate>
     <label>Tu nombre<input name="nombre" required autocomplete="name"></label>
     <label>Tu correo<input name="correo" type="email" required autocomplete="email"></label>

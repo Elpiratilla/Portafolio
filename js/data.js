@@ -24,7 +24,7 @@ const DATA = {
       nombre: "Iker Mejia",
       pagina: "persona2.html",
       rol: "Front end y Back end",
-      foto: "", // ejemplo: "img/iker.jpg"
+      foto: "img/iker.webp",
       sobre: "Hola, soy Iker. Me gusta aprender cosas nuevas y me interesan la programación y el desarrollo web. Estoy aprendiendo a crear aplicaciones web y móviles, y busco oportunidades para mejorar mis habilidades y trabajar en proyectos interesantes.",
       habilidades: ["HTML", "CSS", "JavaScript", "SQL", "PHP"],
       formacion: [
@@ -60,7 +60,7 @@ const DATA = {
       desc: "Proyecto de musicoterapia.",
       premio: "2.º lugar · CREA J · Colegio Don Bosco (primer año de bachillerato)",
       tags: ["HTML", "CSS", "JavaScript"],
-      demo: "https://blues-kniw.onrender.com/start.html", codigo: "https://github.com/alem3jia774-byte/BLUES"
+      demo: "", codigo: "https://github.com/alem3jia774-byte/BLUES"
     }
   ],
 
@@ -68,6 +68,30 @@ const DATA = {
     { titulo: "Páginas web para negocios", desc: "Sitio de una o varias páginas que se ve bien en celular y presenta tu negocio, tus productos y cómo contactarte." },
     { titulo: "Sistemas a la medida", desc: "Registro de clientes, inventario, reservas o control de tiempo, con base de datos y panel para administrarlo." },
     { titulo: "Mejora de un sitio existente", desc: "Ordenamos el diseño, lo hacemos responsive y corregimos lo que no funciona en tu página actual." }
+  ],
+
+  /* WhatsApp: escribe el número con código de país y sin signos, ejemplo "50370000000".
+     Si queda vacío, el botón no se muestra. */
+  whatsapp: {
+    numero: "",
+    mensaje: "Hola, vi su portafolio y me interesa una página web para mi negocio."
+  },
+
+  /* BORRADOR: ajusta los pasos a cómo trabajan en realidad */
+  proceso: [
+    { titulo: "Platicamos", desc: "Nos cuentas qué necesitas, para quién es y qué quieres lograr." },
+    { titulo: "Te mostramos una propuesta", desc: "Te enseñamos cómo se vería y qué incluiría antes de construirlo." },
+    { titulo: "Lo construimos", desc: "Hacemos la página o el sistema y te vamos mostrando los avances." },
+    { titulo: "Lo entregamos", desc: "Lo publicamos, revisamos que todo funcione y te explicamos cómo usarlo." }
+  ],
+
+  /* BORRADOR: cambia las respuestas por lo que de verdad ofrecen (tiempos, precios, mantenimiento) */
+  faq: [
+    { p: "¿Cuánto tarda hacer una página?", r: "Depende de lo que necesites. Una página sencilla toma menos tiempo que un sistema con base de datos. Cuando platiquemos te damos un estimado." },
+    { p: "¿Cuánto cuesta?", r: "El precio depende del tamaño del proyecto. Cuéntanos qué necesitas y te enviamos una cotización." },
+    { p: "¿Necesito comprar dominio y hosting?", r: "Para tener tu página en internet sí necesitas ambos. Te ayudamos a elegirlos y a dejarlos configurados, y quedan a tu nombre." },
+    { p: "¿Se va a ver bien en el celular?", r: "Sí. Las páginas que hacemos se adaptan a celular, tablet y computador." },
+    { p: "¿Se pueden hacer cambios después de la entrega?", r: "Sí. Podemos acordar ajustes o actualizaciones después de entregarla." }
   ],
 
   contacto: {
