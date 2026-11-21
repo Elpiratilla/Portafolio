@@ -36,10 +36,6 @@ const DATA = {
       ]
     }
   },
-
-  /* quien: "a" = Mateo, "b" = Iker, "j" = los dos
-     img: ruta de una captura, ejemplo "img/go503.png" (16:9). Si queda vacío no se muestra.
-     premio: se muestra como etiqueta destacada (déjalo vacío si no aplica) */
   proyectos: [
     {
       titulo: "Go 503", quien: "a", img: "",
@@ -60,9 +56,16 @@ const DATA = {
       desc: "Proyecto de musicoterapia.",
       premio: "2.º lugar · CREA J · Colegio Don Bosco (primer año de bachillerato)",
       tags: ["HTML", "CSS", "JavaScript"],
-      demo: "", codigo: "https://github.com/alem3jia774-byte/BLUES"
+      demo: "https://creaj.onrender.com/html/start.html", codigo: "https://github.com/alem3jia774-byte/BLUES"
+    },
+    {
+      titulo: "Rest", quien: "b", img: "",
+      desc: "Proyecto de tienda de comida.",
+      premio: "",
+      tags: ["HTML", "CSS", "JavaScript"],
+      demo: "https://rest-eqwm.onrender.com/index.html", codigo: "https://github.com/alem3jia774-byte/Rest.git"
     }
-  ],
+    ],
 
   servicios: [
     { titulo: "Páginas web para negocios", desc: "Sitio de una o varias páginas que se ve bien en celular y presenta tu negocio, tus productos y cómo contactarte." },
@@ -73,7 +76,7 @@ const DATA = {
   /* WhatsApp: escribe el número con código de país y sin signos, ejemplo "50370000000".
      Si queda vacío, el botón no se muestra. */
   whatsapp: {
-    numero: "",
+    numero: "50372635254",
     mensaje: "Hola, vi su portafolio y me interesa una página web para mi negocio."
   },
 
