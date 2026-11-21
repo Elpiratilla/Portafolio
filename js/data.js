@@ -1,14 +1,14 @@
 /* ===== AQUÍ SE EDITA TODO: nombres, proyectos, servicios y contacto ===== */
 const DATA = {
   titulo: "Nuestro portafolio",
-  intro: "Proyectos de desarrollo web que hemos construido, juntos y por separado. Cada color indica quién lo hizo.",
+  intro: "Explora nuestros proyectos, conoce al equipo y descubre cómo podemos ayudarte con tu próxima idea.",
 
   personas: {
     a: {
       nombre: "Mateo Lara",
       pagina: "persona1.html",
-      rol: "Front end y Back end",
-      foto: "img/mateo.webp", // ejemplo: "img/mateo.jpg" (si queda vacío se muestran las iniciales)
+      rol: "Desarrollo frontend y backend",
+      foto: "", // ejemplo: "img/mateo.jpg" (si queda vacío se muestran las iniciales)
       // BORRADOR: cámbialo por tus propias palabras
       sobre: "Me gusta construir páginas y sistemas web que resuelvan algo real. En Go 503 rastreo buses para saber a qué hora llegan, y con Sin límites trabajé en inclusión digital. Sigo aprendiendo Node.js y bases de datos, y busco proyectos donde pueda seguir creciendo.",
       habilidades: ["HTML", "CSS", "JavaScript", "Node.js", "SQL", "PHP"],
@@ -16,22 +16,22 @@ const DATA = {
         { titulo: "Carrera: Desarrollo de software", lugar: "Colegio Don Bosco", fecha: "2016 – actualidad" }
       ],
       contacto: [
-        { etiqueta: "Correo", valor: "mateolara2915@gmail.com", href: "mailto:mateolara2915@gmail.com" },
+        { etiqueta: "Correo", valor: "folgiodigital2@gmail.com", href: "mailto:folgiodigital2@gmail.com" },
         { etiqueta: "GitHub", valor: "github.com/Elpiratilla", href: "https://github.com/Elpiratilla" }
       ]
     },
     b: {
       nombre: "Iker Mejia",
       pagina: "persona2.html",
-      rol: "Front end y Back end",
+      rol: "Desarrollo frontend y backend",
       foto: "img/iker.webp",
-      sobre: "Hola, soy Iker. Me gusta aprender cosas nuevas y me interesan la programación y el desarrollo web. Estoy aprendiendo a crear aplicaciones web y móviles, y busco oportunidades para mejorar mis habilidades y trabajar en proyectos interesantes.",
+      sobre: "Me interesa crear experiencias web útiles y fáciles de usar. He trabajado en Blue's, un proyecto de musicoterapia, y Rest, una tienda de comida. Sigo aprendiendo desarrollo web y fortaleciendo mis habilidades de programación.",
       habilidades: ["HTML", "CSS", "JavaScript", "SQL", "PHP"],
       formacion: [
         { titulo: "Carrera: Desarrollo de software", lugar: "Colegio Don Bosco", fecha: "2014 – actualidad" }
       ],
       contacto: [
-        { etiqueta: "Correo", valor: "alem3jia774@gmail.com", href: "mailto:alem3jia774@gmail.com" },
+        { etiqueta: "Correo", valor: "folgiodigital2@gmail.com", href: "mailto:folgiodigital2@gmail.com" },
         { etiqueta: "GitHub", valor: "github.com/alem3jia774-byte", href: "https://github.com/alem3jia774-byte" }
       ]
     }
