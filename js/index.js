@@ -47,6 +47,7 @@ $("faq").innerHTML = `<h2>Preguntas frecuentes</h2>
   <div class="faq-list">${DATA.faq.map(x => `<details><summary>${esc(x.p)}</summary><p>${esc(x.r)}</p></details>`).join("")}</div>`;
 
 /* ===== Contacto ===== */
+const C = DATA.contacto;
 $("contacto").innerHTML = `<h2>Cuéntanos tu idea</h2>
   <p class="c-intro">${esc(C.texto)}${waLink ? ` También puedes <a href="${esc(waLink)}" target="_blank" rel="noopener">escribirnos por WhatsApp</a>.` : ""}</p>
   <form id="form" novalidate>
@@ -56,6 +57,7 @@ $("contacto").innerHTML = `<h2>Cuéntanos tu idea</h2>
     <button type="submit">Enviar mensaje</button>
     <p id="estado" role="status" aria-live="polite"></p>
   </form>`;
+
 const estado = t => { $("estado").textContent = t; };
 
 $("form").addEventListener("submit", async e => {
@@ -85,6 +87,7 @@ $("form").addEventListener("submit", async e => {
     estado("Se abrió tu aplicación de correo con el mensaje listo para enviar.");
   }
 });
+
 /* El botón flotante de WhatsApp se oculta cuando el formulario está en pantalla, para que no tape el botón "Enviar" */
 const wa = document.querySelector(".wa");
 if (wa && "IntersectionObserver" in window) {

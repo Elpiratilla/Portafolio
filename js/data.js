@@ -98,7 +98,7 @@ const DATA = {
 
   contacto: {
     texto: "Cuéntanos qué necesitas y te respondemos por correo.",
-    formspree: "https://formspree.io/f/xwlonoye"
+    formspree: "https://formspree.io/f/meagrqrg"
   },
 
   pie: "Mateo Lara e Iker Mejia"
