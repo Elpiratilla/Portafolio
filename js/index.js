@@ -47,18 +47,15 @@ $("faq").innerHTML = `<h2>Preguntas frecuentes</h2>
   <div class="faq-list">${DATA.faq.map(x => `<details><summary>${esc(x.p)}</summary><p>${esc(x.r)}</p></details>`).join("")}</div>`;
 
 /* ===== Contacto ===== */
-const C = DATA.contacto;
 $("contacto").innerHTML = `<h2>Cuéntanos tu idea</h2>
   <p class="c-intro">${esc(C.texto)}${waLink ? ` También puedes <a href="${esc(waLink)}" target="_blank" rel="noopener">escribirnos por WhatsApp</a>.` : ""}</p>
   <form id="form" novalidate>
     <label>Tu nombre<input name="nombre" required autocomplete="name"></label>
     <label>Tu correo<input name="correo" type="email" required autocomplete="email"></label>
-    </label>
     <label>Mensaje<textarea name="mensaje" rows="5" required></textarea></label>
     <button type="submit">Enviar mensaje</button>
     <p id="estado" role="status" aria-live="polite"></p>
   </form>`;
-
 const estado = t => { $("estado").textContent = t; };
 
 $("form").addEventListener("submit", async e => {
@@ -68,7 +65,7 @@ $("form").addEventListener("submit", async e => {
     estado("Revisa que el nombre, el correo y el mensaje estén completos.");
     return;
   }
-  const para = d.para === "j" ? [correoDe("a"), correoDe("b")] : [correoDe(d.para)];
+  const para = [...new Set([correoDe("a"), correoDe("b")].filter(Boolean))];
   if (C.formspree) {
     try {
       const r = await fetch(C.formspree, {
