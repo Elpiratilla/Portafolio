@@ -66,10 +66,45 @@ const DATA = {
     }
     ],
 
+  /* Sección de inicio (hero) */
+  hero: {
+    titulo: "Convertimos tus ideas en soluciones digitales.",
+    texto: "Somos un equipo de desarrolladores enfocados en crear páginas web y sistemas personalizados que ayudan a negocios y emprendedores a mejorar sus procesos y crecer en el mundo digital.",
+    linea: "Desarrollo web · Sistemas personalizados · Soluciones digitales"
+  },
+
+  /* Catálogo de servicios. IMPORTANTE: publiquen solo lo que realmente puedan desarrollar. */
   servicios: [
-    { titulo: "Páginas web para negocios", desc: "Sitio de una o varias páginas que se ve bien en celular y presenta tu negocio, tus productos y cómo contactarte." },
-    { titulo: "Sistemas a la medida", desc: "Registro de clientes, inventario, reservas o control de tiempo, con base de datos y panel para administrarlo." },
-    { titulo: "Mejora de un sitio existente", desc: "Ordenamos el diseño, lo hacemos responsive y corregimos lo que no funciona en tu página actual." }
+    { titulo: "Desarrollo de páginas web", problema: "Tu negocio no aparece en internet o tu sitio actual no transmite confianza.",
+      incluye: ["Páginas informativas para negocios", "Sitios web para restaurantes", "Landing pages para productos o servicios", "Portafolios profesionales"] },
+    { titulo: "Sistemas administrativos", problema: "Llevas inventario, clientes o ventas en papel o en hojas sueltas.",
+      incluye: ["Control de inventario", "Registro de productos", "Gestión de clientes", "Ventas y reportes"] },
+    { titulo: "Menús digitales", problema: "Tus clientes necesitan ver tu carta sin imprimirla cada vez que cambia.",
+      incluye: ["Menús interactivos para restaurantes", "Categorías de productos", "Fotografías y precios", "Acceso mediante código QR"] },
+    { titulo: "Mantenimiento y soporte", problema: "Tu página tiene errores o se quedó desactualizada.",
+      incluye: ["Corrección de errores", "Actualización de contenido", "Mejoras de funcionalidades", "Mantenimiento preventivo"] }
+  ],
+
+  /* BORRADOR: textos de detalle de cada proyecto (objetivo, problema, solución, resultado). Ajústenlos a la realidad. */
+  detalles: {
+    "Go 503": { objetivo: "Ayudar a las personas a saber cuándo llega su bus.", problema: "No hay una forma sencilla de conocer horarios y recorridos de los autobuses.", solucion: "Aplicación web que rastrea buses y muestra horarios y rutas.", resultado: "Consulta de llegadas y recorridos desde el celular." },
+    "Sin límites": { objetivo: "Promover la inclusión digital.", problema: "Muchas personas encuentran barreras para usar herramientas digitales.", solucion: "Sitio web enfocado en accesibilidad e inclusión.", resultado: "1.er lugar en el concurso CREA J del Colegio Don Bosco." },
+    "Blue's": { objetivo: "Presentar un proyecto de musicoterapia.", problema: "Dar a conocer la musicoterapia de forma clara y atractiva.", solucion: "Sitio web con información y recursos del proyecto.", resultado: "2.º lugar en el concurso CREA J del Colegio Don Bosco." },
+    "Rest": { objetivo: "Mostrar y vender comida en línea.", problema: "Un negocio de comida necesita presentar su oferta de forma ordenada.", solucion: "Tienda web con catálogo de comida.", resultado: "Sitio funcional publicado en línea." }
+  },
+
+  sectores: [
+    { titulo: "Restaurantes", desc: "Menús digitales, páginas web y sistemas de inventario." },
+    { titulo: "Emprendedores", desc: "Páginas para presentar tus productos y servicios." },
+    { titulo: "Pequeños negocios", desc: "Herramientas para organizar sus operaciones." },
+    { titulo: "Profesionales independientes", desc: "Portafolios y páginas personales." }
+  ],
+
+  porque: [
+    { titulo: "Atención personalizada", desc: "Cada proyecto se desarrolla teniendo en cuenta las necesidades específicas del cliente." },
+    { titulo: "Soluciones a medida", desc: "No todos los negocios necesitan lo mismo. Desarrollamos herramientas adaptadas a cada situación." },
+    { titulo: "Comunicación constante", desc: "Mantenemos al cliente informado durante las diferentes etapas del desarrollo." },
+    { titulo: "Compromiso con la calidad", desc: "Probamos nuestras soluciones para procurar que funcionen correctamente antes de entregarlas." }
   ],
 
   /* WhatsApp: escribe el número con código de país y sin signos, ejemplo "50370000000".
@@ -79,21 +114,36 @@ const DATA = {
     mensaje: "Hola, vi su portafolio y me interesa una página web para mi negocio."
   },
 
-  /* BORRADOR: ajusta los pasos a cómo trabajan en realidad */
   proceso: [
-    { titulo: "Platicamos", desc: "Nos cuentas qué necesitas, para quién es y qué quieres lograr." },
-    { titulo: "Te mostramos una propuesta", desc: "Te enseñamos cómo se vería y qué incluiría antes de construirlo." },
-    { titulo: "Lo construimos", desc: "Hacemos la página o el sistema y te vamos mostrando los avances." },
-    { titulo: "Lo entregamos", desc: "Lo publicamos, revisamos que todo funcione y te explicamos cómo usarlo." }
+    { titulo: "Conocemos tu necesidad", desc: "Escuchamos qué necesita mejorar tu negocio." },
+    { titulo: "Analizamos y proponemos", desc: "Evaluamos el problema y planteamos una solución." },
+    { titulo: "Planificamos", desc: "Definimos funcionalidades, tiempos y presupuesto." },
+    { titulo: "Desarrollamos", desc: "Construimos y probamos el proyecto." },
+    { titulo: "Entregamos", desc: "Presentamos el resultado y explicamos cómo utilizarlo." }
+  ],
+  procesoNota: "Los tiempos y entregables se acuerdan antes de comenzar.",
+
+  /* Paquetes: sin precios fijos, se cotiza según funcionalidades, dificultad y tiempo */
+  paquetes: [
+    { titulo: "Esencial", para: "Emprendedores y pequeños negocios", incluye: ["Página sencilla que se ve bien en celular", "Información de tu negocio y contacto"] },
+    { titulo: "Profesional", para: "Negocios que necesitan una web más completa", incluye: ["Varias secciones o páginas", "Formulario de contacto conectado", "Menú digital o catálogo"] },
+    { titulo: "Personalizado", para: "Empresas con necesidades específicas", incluye: ["Sistema a la medida con base de datos", "Funcionalidades acordadas contigo"] }
   ],
 
-  /* BORRADOR: cambia las respuestas por lo que de verdad ofrecen (tiempos, precios, mantenimiento) */
+  /* Testimonios: déjenlos vacíos hasta tener clientes reales. Con datos, la sección aparece sola.
+     Formato: { nombre, negocio, servicio, texto } */
+  testimonios: [],
+
   faq: [
-    { p: "¿Cuánto tarda hacer una página?", r: "Depende de lo que necesites. Una página sencilla toma menos tiempo que un sistema con base de datos. Cuando platiquemos te damos un estimado." },
-    { p: "¿Cuánto cuesta?", r: "El precio depende del tamaño del proyecto. Cuéntanos qué necesitas y te enviamos una cotización." },
-    { p: "¿Necesito comprar dominio y hosting?", r: "Para tener tu página en internet sí necesitas ambos. Te ayudamos a elegirlos y a dejarlos configurados, y quedan a tu nombre." },
-    { p: "¿Se va a ver bien en el celular?", r: "Sí. Las páginas que hacemos se adaptan a celular, tablet y computador." },
-    { p: "¿Se pueden hacer cambios después de la entrega?", r: "Sí. Podemos acordar ajustes o actualizaciones después de entregarla." }
+    { p: "¿Cuánto cuesta desarrollar una página web?", r: "Depende de las funcionalidades, la dificultad y el tiempo. Cuéntanos qué necesitas y te enviamos una cotización." },
+    { p: "¿Cuánto tiempo tarda un proyecto?", r: "Una página sencilla toma menos que un sistema con base de datos. Los tiempos se acuerdan antes de comenzar." },
+    { p: "¿Ofrecen mantenimiento?", r: "Sí. Podemos acordar corrección de errores y actualizaciones después de la entrega." },
+    { p: "¿Puedo solicitar modificaciones?", r: "Sí. Te mostramos avances durante el desarrollo para ajustar lo que haga falta." },
+    { p: "¿Cómo se realiza el pago?", r: "Lo acordamos contigo al definir el presupuesto, antes de empezar." },
+    { p: "¿Qué sucede si necesito nuevas funcionalidades?", r: "Las evaluamos juntos y te damos una cotización de lo adicional." },
+    { p: "¿Trabajan con negocios pequeños?", r: "Sí, es justo para quienes empezamos: emprendedores y pequeños negocios." },
+    { p: "¿Necesito comprar dominio y hosting?", r: "Para tener tu página en internet sí necesitas ambos. Te ayudamos a elegirlos y configurarlos, y quedan a tu nombre." },
+    { p: "¿Cómo puedo solicitar una cotización?", r: "Llena el formulario de contacto o escríbenos por WhatsApp." }
   ],
 
   contacto: {
@@ -101,5 +151,7 @@ const DATA = {
     formspree: "https://formspree.io/f/meagrqrg"
   },
 
-  pie: "Mateo Lara e Iker Mejia"
+  pie: "Mateo Lara e Iker Mejia",
+  piedesc: "Desarrolladores web y de sistemas en El Salvador.",
+  privacidad: "Usamos los datos que nos envías solo para responder a tu solicitud. No los compartimos con terceros."
 };

@@ -18,7 +18,7 @@ function proyectoHTML(p){
       ${p.premio ? `<p class="award">${esc(p.premio)}</p>` : ""}
       <p class="desc">${esc(p.desc)}</p>
       <ul class="tags">${p.tags.map(t => `<li>${esc(t)}</li>`).join("")}</ul>
-      <div class="links">${p.demo ? `<a href="${esc(p.demo)}">Ver demo</a>` : ""}${p.codigo ? `<a href="${esc(p.codigo)}">Ver código</a>` : ""}</div>
+      <div class="links">${p.demo ? `<a href="${esc(p.demo)}">Ver demo</a>` : ""}${p.codigo ? `<a href="${esc(p.codigo)}">Ver código</a>` : ""}${DATA.detalles && DATA.detalles[p.titulo] ? `<button type="button" class="det" data-det="${esc(p.titulo)}">Ver detalles</button>` : ""}</div>
     </div>
   </article>`;
 }
@@ -41,3 +41,15 @@ if (waLink) {
       <span>WhatsApp</span>
     </a>`);
 } 
+
+/* ===== Ventana de detalles de proyecto ===== */
+document.body.insertAdjacentHTML("beforeend", `<dialog id="dlg" aria-labelledby="dlg-t"><div id="dlg-c"></div><button type="button" id="dlg-x">Cerrar</button></dialog>`);
+const dlg = $("dlg");
+document.addEventListener("click", e => {
+  const b = e.target.closest(".det");
+  if (b) {
+    const t = b.dataset.det, d = DATA.detalles[t], p = DATA.proyectos.find(x => x.titulo === t);
+    $("dlg-c").innerHTML = `<h2 id="dlg-t">${esc(t)}</h2><dl>` + [["Objetivo","objetivo"],["Problema","problema"],["Solución","solucion"],["Resultado","resultado"]].map(([l,k]) => `<dt>${l}</dt><dd>${esc(d[k])}</dd>`).join("") + `<dt>Tecnologías</dt><dd>${esc(p.tags.join(", "))}</dd></dl>`;
+    dlg.showModal();
+  } else if (e.target === dlg || e.target.id === "dlg-x") dlg.close();
+});

@@ -1,12 +1,17 @@
 /* Página de inicio: proyectos + acceso a cada perfil */
-document.title = DATA.titulo;
-$("titulo").textContent = DATA.titulo;
-$("intro").textContent = DATA.intro;
-
+document.title = "Portafolio · " + DATA.pie;
+const H = DATA.hero;
+$("titulo").textContent = H.titulo;
+$("intro").textContent = H.texto;
 $("intro").insertAdjacentHTML("afterend",
-  `<nav class="nav" aria-label="Secciones">
+  `<div class="cta"><a class="btn" href="#filters">Ver nuestros proyectos</a><a class="btn alt" href="#contacto">Solicitar una cotización</a></div>
+  <p class="linea">${esc(H.linea)}</p>
+  <nav class="nav" aria-label="Secciones">
     <a href="#filters">Proyectos</a>
     <a href="#servicios">Servicios</a>
+    <a href="#sectores">Sectores</a>
+    <a href="#proceso">Proceso</a>
+    <a href="#paquetes">Paquetes</a>
     <a href="#contacto">Contacto</a>
     <a href="${esc(P.a.pagina)}">${esc(primerNombre(P.a.nombre))}</a>
     <a href="${esc(P.b.pagina)}">${esc(primerNombre(P.b.nombre))}</a>
@@ -34,13 +39,34 @@ $("quienes").innerHTML = `<h2>Quiénes somos</h2><div class="pl-grid">` + ["a","
   return `<a class="pl ${k}" href="${esc(p.pagina)}">${mini}<span><strong>${esc(p.nombre)}</strong><small>${esc(p.rol)}. Ver perfil</small></span></a>`;
 }).join("") + `</div>`;
 
-/* ===== Servicios ===== */
-$("servicios").innerHTML = `<h2>Qué podemos hacer por ti</h2>
-  <div class="srv-grid">${DATA.servicios.map(x => `<article class="srv"><h3>${esc(x.titulo)}</h3><p>${esc(x.desc)}</p></article>`).join("")}</div>`;
+const grid = (cls, arr, fn) => `<div class="${cls}">${arr.map(fn).join("")}</div>`;
+const lista = a => `<ul class="inc">${a.map(i => `<li>${esc(i)}</li>`).join("")}</ul>`;
 
-/* ===== Cómo trabajamos (es una secuencia, por eso va numerado) ===== */
+/* ===== Servicios (catálogo) ===== */
+$("servicios").innerHTML = `<h2>Qué podemos hacer por ti</h2>` + grid("srv-grid", DATA.servicios, x =>
+  `<article class="srv"><h3>${esc(x.titulo)}</h3><p class="prob"><strong>Resuelve:</strong> ${esc(x.problema)}</p><p class="qi">Qué incluye</p>${lista(x.incluye)}<a class="mas" href="#contacto" data-srv="${esc(x.titulo)}">Solicitar información</a></article>`);
+
+/* ===== Sectores ===== */
+$("sectores").innerHTML = `<h2>¿Para quién trabajamos?</h2>` + grid("srv-grid cuatro", DATA.sectores, x => `<article class="srv"><h3>${esc(x.titulo)}</h3><p>${esc(x.desc)}</p></article>`) + `<p class="nota">No nos limitamos a estos sectores: son nuestros primeros mercados.</p>`;
+
+/* ===== Por qué elegirnos ===== */
+$("porque").innerHTML = `<h2>¿Por qué elegirnos?</h2>` + grid("srv-grid cuatro", DATA.porque, x => `<article class="srv"><h3>${esc(x.titulo)}</h3><p>${esc(x.desc)}</p></article>`);
+
+/* ===== Cómo trabajamos (secuencia numerada) ===== */
 $("proceso").innerHTML = `<h2>Cómo trabajamos</h2>
-  <ol class="pasos">${DATA.proceso.map(x => `<li><h3>${esc(x.titulo)}</h3><p>${esc(x.desc)}</p></li>`).join("")}</ol>`;
+  <ol class="pasos">${DATA.proceso.map(x => `<li><h3>${esc(x.titulo)}</h3><p>${esc(x.desc)}</p></li>`).join("")}</ol>
+  <p class="nota">${esc(DATA.procesoNota)}</p>`;
+
+/* ===== Paquetes ===== */
+$("paquetes").innerHTML = `<h2>Paquetes y cotizaciones</h2><p class="c-intro">No manejamos precios fijos: cotizamos según las funcionalidades, la dificultad y el tiempo de desarrollo.</p>` +
+  grid("srv-grid", DATA.paquetes, x => `<article class="srv"><h3>${esc(x.titulo)}</h3><p class="prob">${esc(x.para)}</p><p class="qi">Puede incluir</p>${lista(x.incluye)}</article>`) +
+  `<a class="btn" href="#contacto">Solicitar cotización personalizada</a>`;
+
+/* ===== Testimonios (solo si hay reales en data.js) ===== */
+if (DATA.testimonios.length) {
+  $("testimonios").hidden = false;
+  $("testimonios").innerHTML = `<h2>Lo que dicen nuestros clientes</h2>` + grid("srv-grid", DATA.testimonios, x => `<figure class="srv"><blockquote>${esc(x.texto)}</blockquote><figcaption><strong>${esc(x.nombre)}</strong>, ${esc(x.negocio)}<br><small>${esc(x.servicio)}</small></figcaption></figure>`);
+}
 
 /* ===== Preguntas frecuentes ===== */
 $("faq").innerHTML = `<h2>Preguntas frecuentes</h2>
@@ -48,15 +74,22 @@ $("faq").innerHTML = `<h2>Preguntas frecuentes</h2>
 
 /* ===== Contacto ===== */
 const C = DATA.contacto;
+const optsSrv = DATA.servicios.map(s => `<option>${esc(s.titulo)}</option>`).join("") + "<option>Otro / no estoy seguro</option>";
 $("contacto").innerHTML = `<h2>Cuéntanos tu idea</h2>
-  <p class="c-intro">${esc(C.texto)}${waLink ? ` También puedes <a href="${esc(waLink)}" target="_blank" rel="noopener">escribirnos por WhatsApp</a>.` : ""}</p>
+  <p class="c-intro">${esc(C.texto)} También puedes <a href="${waLink ? esc(waLink) : "#"}" target="_blank" rel="noopener">escribirnos por WhatsApp</a> o al <a href="mailto:${esc(correoDe("a"))}">correo</a>.</p>
   <form id="form" novalidate>
     <label>Tu nombre<input name="nombre" required autocomplete="name"></label>
+    <label>Nombre de tu negocio<input name="negocio" autocomplete="organization"></label>
     <label>Tu correo<input name="correo" type="email" required autocomplete="email"></label>
-    <label>Mensaje<textarea name="mensaje" rows="5" required></textarea></label>
-    <button type="submit">Enviar mensaje</button>
+    <label>Tipo de servicio que necesitas<select name="servicio">${optsSrv}</select></label>
+    <label>Describe tu proyecto<textarea name="mensaje" rows="5" required></textarea></label>
+    <label>Presupuesto aproximado (opcional)<input name="presupuesto" inputmode="text" placeholder="Ej. $300"></label>
+    <button type="submit">Enviar solicitud</button>
     <p id="estado" role="status" aria-live="polite"></p>
   </form>`;
+document.addEventListener("click", e => {
+  const s = e.target.closest("[data-srv]"); if (s) $("form").elements.servicio.value = s.dataset.srv;
+});
 
 const estado = t => { $("estado").textContent = t; };
 
@@ -73,7 +106,7 @@ $("form").addEventListener("submit", async e => {
       const r = await fetch(C.formspree, {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({ nombre: d.nombre, correo: d.correo, para: para.join(", "), mensaje: d.mensaje })
+        body: JSON.stringify({ ...d, para: para.join(", ") })
       });
       if (!r.ok) throw new Error("envio");
       f.reset();
@@ -82,7 +115,7 @@ $("form").addEventListener("submit", async e => {
       estado("No se pudo enviar el mensaje. Escríbenos directo a " + para.join(" o ") + ".");
     }
   } else {
-    const cuerpo = d.mensaje + "\n\n" + d.nombre + " (" + d.correo + ")";
+    const cuerpo = d.mensaje + "\n\nNegocio: " + d.negocio + "\nServicio: " + d.servicio + "\nPresupuesto: " + d.presupuesto + "\n" + d.nombre + " (" + d.correo + ")";
     location.href = "mailto:" + para.join(",") + "?subject=" + encodeURIComponent("Contacto desde el portafolio") + "&body=" + encodeURIComponent(cuerpo);
     estado("Se abrió tu aplicación de correo con el mensaje listo para enviar.");
   }
@@ -94,3 +127,11 @@ if (wa && "IntersectionObserver" in window) {
   new IntersectionObserver(([en]) => wa.classList.toggle("oculto", en.isIntersecting), { rootMargin: "0px 0px -10% 0px" })
     .observe($("form"));
 }
+
+/* ===== Footer ===== */
+$("foot-grid").innerHTML = `<div><strong>${esc(DATA.pie)}</strong><p>${esc(DATA.piedesc)}</p></div>
+  <div><strong>Secciones</strong><ul><li><a href="#inicio">Volver al inicio</a></li><li><a href="#filters">Proyectos</a></li><li><a href="#proceso">Cómo trabajamos</a></li><li><a href="#faq">Preguntas frecuentes</a></li></ul></div>
+  <div><strong>Servicios</strong><ul>${DATA.servicios.map(s => `<li>${esc(s.titulo)}</li>`).join("")}</ul></div>
+  <div><strong>Contacto</strong><ul><li><a href="mailto:${esc(correoDe("a"))}">${esc(correoDe("a"))}</a></li>${P.a.contacto.concat(P.b.contacto).filter(c => c.etiqueta === "GitHub").map(c => `<li><a href="${esc(c.href)}" target="_blank" rel="noopener">GitHub · ${esc(c.valor.split("/").pop())}</a></li>`).join("")}</ul></div>
+  <p class="priv"><strong>Aviso de privacidad:</strong> ${esc(DATA.privacidad)}</p>`;
+$("foot").textContent = "© " + new Date().getFullYear() + " " + DATA.pie + ". Todos los derechos reservados.";
