@@ -41,7 +41,7 @@ const DATA = {
       desc: "Rastreo de autobuses para saber a qué hora llegan y por dónde pasan.",
       premio: "",
       tags: ["HTML", "CSS", "JavaScript", "Node.js", "SQL"],
-      demo: "https://go503.onrender.com", codigo: "https://github.com/Elpiratilla/bus-tracker"
+      demo: "https://go503.onrender.com", codigo: "https://github.com/Elpiratilla/bus-tracker",
     },
     {
       titulo: "Sin límites", quien: "a", img: "",

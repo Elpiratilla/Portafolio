@@ -1,0 +1,14 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+
+# SQLite local databases
+*.db
+*.db-shm
+*.db-wal
+
+# Environment files
+.env
