@@ -1,31 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex">
-<title>Página no encontrada · Portafolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2f5fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1424" media="(prefers-color-scheme: dark)">
+<title>Portafolio · Mateo Lara e Iker Mejia</title>
+<meta name="description" content="Portafolio de Mateo Lara e Iker Mejia, estudiantes de desarrollo de software en El Salvador. Sitios web y sistemas a la medida con HTML, CSS, JavaScript, Node.js, PHP y SQL.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Portafolio · Mateo Lara e Iker Mejia">
+<meta property="og:description" content="Proyectos de desarrollo web hechos por dos estudiantes salvadoreños. Mira lo que hemos construido y cuéntanos tu idea.">
+<!-- TU-DOMINIO: al publicar, ejecuta  node tools/dominio.js https://tu-dominio.com/  y se reemplaza en todos los archivos -->
+<link rel="canonical" href="https://TU-DOMINIO/">
+<link rel="alternate" hreflang="es" href="https://TU-DOMINIO/">
+<link rel="alternate" hreflang="en" href="https://TU-DOMINIO/?lang=en">
+<meta property="og:url" content="https://TU-DOMINIO/">
+<meta property="og:locale" content="es_SV">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://TU-DOMINIO/img/portada.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Portafolio de Mateo Lara e Iker Mejia">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Mateo Lara e Iker Mejia","description":"Desarrollo de páginas web y sistemas personalizados para negocios y emprendedores en El Salvador.","areaServed":"SV","email":"folgiodigital2@gmail.com","url":"https://TU-DOMINIO/","image":"https://TU-DOMINIO/img/portada.png","knowsLanguage":["es","en"],"member":[{"@type":"Person","name":"Mateo Lara","url":"https://TU-DOMINIO/persona1.html","sameAs":"https://github.com/Elpiratilla"},{"@type":"Person","name":"Iker Mejia","url":"https://TU-DOMINIO/persona2.html","sameAs":"https://github.com/alem3jia774-byte"}]}
+</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='16' height='32' fill='%232447d6'/%3E%3Crect x='16' width='16' height='32' fill='%230d7f64'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-<main class="wrap hero" id="main">
-  <h1 id="t">No encontramos esa página.</h1>
-  <p id="p">Puede que el enlace esté mal escrito o que la página ya no exista.</p>
-  <div class="cta"><a class="btn" id="a" href="/">Ir al portafolio</a></div>
+<a class="skip" href="#main">Saltar al contenido</a>
+<noscript><div class="wrap"><p><strong>Este portafolio necesita JavaScript para mostrar los proyectos.</strong> Mateo Lara e Iker Mejia, desarrolladores web y de sistemas en El Salvador. Escríbenos a <a href="mailto:folgiodigital2@gmail.com">folgiodigital2@gmail.com</a> o mira nuestro código en <a href="https://github.com/Elpiratilla">GitHub</a>.</p></div></noscript>
+<header class="wrap hero" id="inicio">
+  <h1 id="titulo">Convertimos tus ideas en soluciones digitales.</h1>
+  <p id="intro">Somos un equipo de desarrolladores enfocados en crear páginas web y sistemas personalizados que ayudan a negocios y emprendedores a mejorar sus procesos y crecer en el mundo digital.</p>
+</header>
+
+<main class="wrap" id="main">
+  <div class="filters" id="filters" role="group" aria-label="Filtrar proyectos"></div>
+  <div class="list" id="list" aria-live="polite"></div>
+  <section class="quienes" id="quienes"></section>
+  <section class="servicios" id="servicios"></section>
+  <section class="sectores" id="sectores"></section>
+  <section class="porque" id="porque"></section>
+  <section class="tecnologias" id="tecnologias"></section>
+  <section class="proceso" id="proceso"></section>
+  <section class="paquetes" id="paquetes"></section>
+  <section class="cotizador" id="cotizador"></section>
+  <section class="testimonios" id="testimonios" hidden></section>
+  <section class="faq" id="faq"></section>
+  <section class="contacto" id="contacto"></section>
 </main>
-<script>
-  /* Idioma: el mismo que eligió la persona en el portafolio */
-  try {
-    if (localStorage.getItem("lang") === "en") {
-      document.documentElement.lang = "en";
-      document.title = "Page not found · Portfolio";
-      document.getElementById("t").textContent = "We could not find that page.";
-      document.getElementById("p").textContent = "The link may be misspelled, or the page no longer exists.";
-      document.getElementById("a").textContent = "Go to the portfolio";
-    }
-  } catch {}
-</script>
+
+<footer class="wrap">
+  <div class="foot-grid" id="foot-grid"></div>
+  <div id="foot"></div>
+  <button type="button" id="theme">Cambiar tema</button><button type="button" id="lang">English</button>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/data.en.js"></script>
+<script src="js/common.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

@@ -1,6 +1,31 @@
-.DS_Store
-node_modules/
-*.db
-*.db-shm
-*.db-wal
-.env
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Página no encontrada · Portafolio</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='16' height='32' fill='%232447d6'/%3E%3Crect x='16' width='16' height='32' fill='%230d7f64'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+<main class="wrap hero" id="main">
+  <h1 id="t">No encontramos esa página.</h1>
+  <p id="p">Puede que el enlace esté mal escrito o que la página ya no exista.</p>
+  <div class="cta"><a class="btn" id="a" href="/">Ir al portafolio</a></div>
+</main>
+<script>
+  /* Idioma: el mismo que eligió la persona en el portafolio */
+  try {
+    if (localStorage.getItem("lang") === "en") {
+      document.documentElement.lang = "en";
+      document.title = "Page not found · Portfolio";
+      document.getElementById("t").textContent = "We could not find that page.";
+      document.getElementById("p").textContent = "The link may be misspelled, or the page no longer exists.";
+      document.getElementById("a").textContent = "Go to the portfolio";
+    }
+  } catch {}
+</script>
+</body>
+</html>

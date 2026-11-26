@@ -1,29 +1,75 @@
 /* Funciones compartidas por todas las páginas */
 const $ = id => document.getElementById(id);
-const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const P = DATA.personas;
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* ===== Idioma: ?lang=en, lo guardado por la persona, o el idioma del navegador ===== */
+const IDIOMAS = ["es", "en"];
+function elegirIdioma() {
+  const q = new URLSearchParams(location.search).get("lang");
+  if (IDIOMAS.includes(q)) { try { localStorage.setItem("lang", q); } catch {} return q; }
+  try { const g = localStorage.getItem("lang"); if (IDIOMAS.includes(g)) return g; } catch {}
+  return String(navigator.language || "es").toLowerCase().startsWith("es") ? "es" : "en";
+}
+/* Une el texto en inglés sobre el español. Las listas se combinan por posición. */
+function unir(base, extra) {
+  if (Array.isArray(base) && Array.isArray(extra)) return base.map((x, i) => i < extra.length ? unir(x, extra[i]) : x).concat(extra.slice(base.length));
+  if (base && extra && typeof base === "object" && typeof extra === "object" && !Array.isArray(base)) {
+    const o = { ...base };
+    for (const k of Object.keys(extra)) o[k] = k in base ? unir(base[k], extra[k]) : extra[k];
+    return o;
+  }
+  return extra === undefined ? base : extra;
+}
+const LANG = elegirIdioma();
+const T = LANG === "en" && typeof DATA_EN !== "undefined" ? unir(DATA, DATA_EN) : DATA;
+const U = T.ui;
+document.documentElement.lang = LANG;
+
+const P = T.personas;
 const primerNombre = n => n.split(" ")[0];
 const iniciales = n => n.split(" ").map(x => x.charAt(0)).join("").slice(0, 2).toUpperCase();
 const correoDe = k => (P[k].contacto.find(c => c.etiqueta === "Correo") || {}).valor || "";
-const byLabel = k => k === "j" ? "Hecho por los dos" : "Hecho por " + P[k].nombre;
+const byLabel = k => k === "j" ? U.hechoJuntos : U.hechoPor + P[k].nombre;
+const dinero = n => "$" + Number(n).toLocaleString(LANG === "en" ? "en-US" : "es-SV");
 
-function proyectoHTML(p){
+function proyectoHTML(p) {
+  const dormida = p.demo && /onrender\.com/i.test(p.demo);
   return `
   <article class="row${p.img ? " has-shot" : ""}" data-who="${p.quien}">
     <div class="tile" aria-hidden="true">${esc(p.titulo.charAt(0))}</div>
     <div>
-      ${p.img ? `<img class="shot" src="${esc(p.img)}" alt="Captura de ${esc(p.titulo)}" loading="lazy">` : ""}
+      ${p.img ? `<img class="shot" src="${esc(p.img)}" alt="${esc(U.captura + p.titulo)}" width="1280" height="720" loading="lazy">` : ""}
       <h2>${esc(p.titulo)}</h2>
       <p class="by">${esc(byLabel(p.quien))}</p>
       ${p.premio ? `<p class="award">${esc(p.premio)}</p>` : ""}
       <p class="desc">${esc(p.desc)}</p>
       <ul class="tags">${p.tags.map(t => `<li>${esc(t)}</li>`).join("")}</ul>
-      <div class="links">${p.demo ? `<a href="${esc(p.demo)}">Ver demo</a>` : ""}${p.codigo ? `<a href="${esc(p.codigo)}">Ver código</a>` : ""}${DATA.detalles && DATA.detalles[p.titulo] ? `<button type="button" class="det" data-det="${esc(p.titulo)}">Ver detalles</button>` : ""}</div>
+      <div class="links">${p.demo ? `<a href="${esc(p.demo)}">${esc(U.verDemo)}</a>` : ""}${p.codigo ? `<a href="${esc(p.codigo)}">${esc(U.verCodigo)}</a>` : ""}${T.detalles && T.detalles[p.titulo] ? `<button type="button" class="det" data-det="${esc(p.titulo)}">${esc(U.verDetalles)}</button>` : ""}</div>
+      ${dormida ? `<p class="nota-demo">${esc(U.demoDespierta)}</p>` : ""}
     </div>
   </article>`;
 }
 
-$("foot").textContent = DATA.pie;
+/* ===== Textos fijos de las páginas, en el idioma elegido ===== */
+const poner = (sel, txt) => { const e = document.querySelector(sel); if (e) e.textContent = txt; };
+poner(".skip", U.skip);
+poner(".back", U.back);
+poner("#theme", U.theme);
+poner("#foot", "");
+if ($("foot")) $("foot").textContent = T.pie;
+
+const btnLang = $("lang");
+if (btnLang) {
+  btnLang.textContent = U.otroIdioma;
+  btnLang.setAttribute("aria-label", U.idiomaAria);
+  btnLang.setAttribute("lang", LANG === "es" ? "en" : "es");
+  btnLang.addEventListener("click", () => {
+    try { localStorage.setItem("lang", LANG === "es" ? "en" : "es"); } catch {}
+    const u = new URL(location.href); u.searchParams.delete("lang");
+    location.href = u.toString();
+  });
+}
+
 $("theme").addEventListener("click", () => {
   const r = document.documentElement;
   const dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
@@ -31,25 +77,28 @@ $("theme").addEventListener("click", () => {
 });
 
 /* ===== WhatsApp: botón flotante (se oculta si no hay número en data.js) ===== */
-const WA = DATA.whatsapp || {};
+const WA = T.whatsapp || {};
 const waNum = String(WA.numero || "").replace(/\D/g, "");
 const waLink = waNum ? "https://wa.me/" + waNum + "?text=" + encodeURIComponent(WA.mensaje || "") : "";
 if (waLink) {
   document.body.insertAdjacentHTML("beforeend",
-    `<a class="wa" href="${esc(waLink)}" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    `<a class="wa" href="${esc(waLink)}" target="_blank" rel="noopener" aria-label="${esc(U.waAria)}">
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/></svg>
       <span>WhatsApp</span>
     </a>`);
-} 
+}
 
 /* ===== Ventana de detalles de proyecto ===== */
-document.body.insertAdjacentHTML("beforeend", `<dialog id="dlg" aria-labelledby="dlg-t"><div id="dlg-c"></div><button type="button" id="dlg-x">Cerrar</button></dialog>`);
+document.body.insertAdjacentHTML("beforeend", `<dialog id="dlg" aria-labelledby="dlg-t"><div id="dlg-c"></div><button type="button" id="dlg-x">${esc(U.cerrar)}</button></dialog>`);
 const dlg = $("dlg");
 document.addEventListener("click", e => {
   const b = e.target.closest(".det");
   if (b) {
-    const t = b.dataset.det, d = DATA.detalles[t], p = DATA.proyectos.find(x => x.titulo === t);
-    $("dlg-c").innerHTML = `<h2 id="dlg-t">${esc(t)}</h2><dl>` + [["Objetivo","objetivo"],["Problema","problema"],["Solución","solucion"],["Resultado","resultado"]].map(([l,k]) => `<dt>${l}</dt><dd>${esc(d[k])}</dd>`).join("") + `<dt>Tecnologías</dt><dd>${esc(p.tags.join(", "))}</dd></dl>`;
+    const t = b.dataset.det, d = T.detalles[t], p = T.proyectos.find(x => x.titulo === t);
+    const filas = [[U.objetivo, "objetivo"], [U.problema, "problema"], [U.solucion, "solucion"], [U.resultado, "resultado"]]
+      .map(([l, k]) => `<dt>${esc(l)}</dt><dd>${esc(d[k])}</dd>`).join("");
+    const met = d.metricas && d.metricas.length ? `<dt>${esc(U.metricas)}</dt><dd><ul class="metricas">${d.metricas.map(m => `<li>${esc(m)}</li>`).join("")}</ul></dd>` : "";
+    $("dlg-c").innerHTML = `<h2 id="dlg-t">${esc(t)}</h2><dl>${filas}${met}<dt>${esc(U.tecnologias)}</dt><dd>${esc(p.tags.join(", "))}</dd></dl>`;
     dlg.showModal();
   } else if (e.target === dlg || e.target.id === "dlg-x") dlg.close();
 });
