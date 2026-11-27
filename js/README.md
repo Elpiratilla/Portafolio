@@ -6,15 +6,30 @@ Sitio estático (HTML, CSS y JavaScript sin dependencias) que presenta nuestros 
 
 | Ruta | Para qué sirve |
 | --- | --- |
-| `index.html`, `persona1.html`, `persona2.html` | Páginas. El contenido se pinta con JavaScript a partir de `js/data.js`. |
+| `index.html` | Inicio: presentación, proyectos destacados, quiénes somos y llamada a contactar. |
+| `proyectos.html` | Todos los proyectos con filtros, y las tecnologías usadas. |
+| `servicios.html` | Servicios, sectores y cómo trabajamos. |
+| `precios.html` | Paquetes, cotizador interactivo y preguntas frecuentes. |
+| `contacto.html` | Formulario y otras formas de contacto. |
+| `persona1.html`, `persona2.html` | Perfil de cada integrante. |
 | `js/data.js` | **Aquí se edita todo en español**: proyectos, servicios, paquetes, cotizador, FAQ, contacto. |
 | `js/data.en.js` | La versión en inglés. Solo lleva textos y se combina por posición con `data.js`: mantén el mismo orden. |
-| `js/common.js`, `index.js`, `persona.js` | Lógica de las páginas. |
+| `js/common.js` | Idioma, encabezado, pie de página y ventana de detalles (todas las páginas). |
+| `js/paginas.js` | Pinta el contenido de Inicio, Proyectos, Servicios, Precios y Contacto. Cada bloque solo se muestra si la página tiene su contenedor. |
+| `js/persona.js` | Pinta las páginas de perfil. |
 | `css/index.css` | Estilos, con modo claro y oscuro. |
 | `demos/menu/` | Demo de menú digital con QR (estática). |
 | `demos/inventario/` | Demo de inventario con Node.js + SQLite (ver su README). |
 | `tools/` | Scripts de ayuda (abajo). |
 | `404.html`, `robots.txt`, `sitemap.xml` | Páginas y archivos para buscadores. |
+
+## Cómo agregar o mover contenido entre páginas
+
+Cada página es un HTML corto con contenedores vacíos (por ejemplo `<section id="faq">`). `js/paginas.js` llena el contenedor si existe. Para mover las preguntas frecuentes a Contacto, basta cambiar de archivo la línea `<section class="faq" id="faq"></section>`.
+
+Los enlaces del menú y del pie salen de la lista `PAGINAS` en `js/common.js`. Si agregas una página nueva, agrégala ahí, en `sitemap.xml` y ponle `data-pagina="nombre"` en el `<body>`.
+
+El cotizador y el botón "Solicitar información" abren Contacto con el servicio y el mensaje ya llenos.
 
 ## Cómo agregar un proyecto
 

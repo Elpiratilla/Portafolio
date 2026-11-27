@@ -12,7 +12,8 @@ if (!arg || !/^https?:\/\/[^\s/]+(\/\S*)?$/.test(arg)) {
 }
 const base = arg.replace(/\/+$/, "");            /* sin barra final */
 const raiz = path.resolve(__dirname, "..");
-const objetivos = ["index.html", "persona1.html", "persona2.html", "robots.txt", "sitemap.xml"];
+/* Todas las páginas .html de la raíz, más robots.txt y sitemap.xml (el 404 no lleva dominio) */
+const objetivos = fs.readdirSync(raiz).filter(f => f.endsWith(".html") && f !== "404.html").concat(["robots.txt", "sitemap.xml"]);
 
 for (const f of objetivos) {
   const ruta = path.join(raiz, f);

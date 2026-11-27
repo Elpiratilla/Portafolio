@@ -188,6 +188,13 @@ const DATA = {
   },
 
   ui: {
+    nInicio: "Inicio", verTodos: "Ver todos los proyectos", verServicios: "Ver todos los servicios", verPrecios: "Ver precios",
+    homeProyT: "Proyectos destacados", homeSrvT: "Qué hacemos", homeCtaT: "¿Tienes una idea en mente?", homeCtaD: "Cuéntanos qué necesitas y te respondemos con una propuesta.",
+    otrasFormas: "Otras formas de contactarnos",
+    pProyectosT: "Proyectos", pProyectosD: "Lo que hemos construido: sitios web, sistemas y demos. Filtra por quién lo hizo.",
+    pServiciosT: "Servicios", pServiciosD: "Qué podemos hacer por tu negocio, para quién trabajamos y cómo lo hacemos.",
+    pPreciosT: "Precios", pPreciosD: "Paquetes de referencia y un estimado al instante. La cotización final se acuerda contigo.",
+    pContactoT: "Contacto",
     cotizar: "Cotizar", menu: "Menú",
     skip: "Saltar al contenido", back: "Volver al portafolio", theme: "Cambiar tema", otroIdioma: "English", idiomaAria: "Cambiar el idioma a inglés",
     verDemo: "Ver demo", verCodigo: "Ver código", verDetalles: "Ver detalles", cerrar: "Cerrar",
@@ -197,7 +204,7 @@ const DATA = {
     perfil: "Perfil", perfilDesc: "Perfil, habilidades y proyectos.", habilidades: "Habilidades", formacion: "Formación", contacto: "Contacto",
     proyectosDe: "Proyectos de ", verPerfilDe: "Ver el perfil de ", sinProyectos: "Todavía no hay proyectos para mostrar.", sinCategoria: "Todavía no hay proyectos en esta categoría.",
     filtrar: "Filtrar proyectos", todos: "Todos", juntos: "Juntos", verProyectos: "Ver nuestros proyectos", pedirCotizacion: "Solicitar una cotización",
-    navAria: "Secciones", nProyectos: "Proyectos", nServicios: "Servicios", nSectores: "Sectores", nTec: "Tecnologías", nProceso: "Proceso", nPaquetes: "Paquetes", nCotizador: "Cotizador", nContacto: "Contacto",
+    navAria: "Principal", nProyectos: "Proyectos", nServicios: "Servicios", nSectores: "Sectores", nTec: "Tecnologías", nProceso: "Proceso", nPaquetes: "Precios", nCotizador: "Cotizador", nContacto: "Contacto",
     quienes: "Quiénes somos", verPerfil: "Ver perfil",
     srvTitulo: "Qué podemos hacer por ti", resuelve: "Resuelve:", incluye: "Qué incluye", pedirInfo: "Solicitar información", verEjemplo: "Ver ejemplo",
     sectoresTitulo: "¿Para quién trabajamos?", sectoresNota: "No nos limitamos a estos sectores: son nuestros primeros mercados.",
@@ -212,7 +219,7 @@ const DATA = {
     cTitulo: "Cuéntanos tu idea", cWhats: "escribirnos por WhatsApp", cCorreo: "correo", cTambien: "También puedes", cO: "o al",
     fNombre: "Tu nombre", fNegocio: "Nombre de tu negocio", fCorreo: "Tu correo", fServicio: "Tipo de servicio que necesitas", fMensaje: "Describe tu proyecto", fPresupuesto: "Presupuesto aproximado (opcional)", fPlaceholder: "Ej. $300", fEnviar: "Enviar solicitud", fOtro: "Otro / no estoy seguro",
     fRevisa: "Revisa que el nombre, el correo y el mensaje estén completos.", fOk: "Mensaje enviado. Te responderemos pronto.", fError: "No se pudo enviar el mensaje. Escríbenos directo a ", fMailto: "Se abrió tu aplicación de correo con el mensaje listo para enviar.", fAsunto: "Contacto desde el portafolio",
-    waAria: "Escribir por WhatsApp", pieSecciones: "Secciones", pieInicio: "Volver al inicio", pieFaq: "Preguntas frecuentes", pieServicios: "Servicios", pieContacto: "Contacto", privAviso: "Aviso de privacidad:", derechos: "Todos los derechos reservados."
+    waAria: "Escribir por WhatsApp", pieSecciones: "Páginas", pieInicio: "Volver al inicio", pieFaq: "Preguntas frecuentes", pieServicios: "Servicios", pieContacto: "Contacto", privAviso: "Aviso de privacidad:", derechos: "Todos los derechos reservados."
   },
 
   pie: "Mateo Lara e Iker Mejia",

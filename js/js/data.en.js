@@ -117,6 +117,13 @@ const DATA_EN = {
   privacidad: "We use the data you send us only to reply to your request. We do not share it with third parties.",
 
   ui: {
+    nInicio: "Home", verTodos: "See all projects", verServicios: "See all services", verPrecios: "See pricing",
+    homeProyT: "Featured projects", homeSrvT: "What we do", homeCtaT: "Have an idea in mind?", homeCtaD: "Tell us what you need and we will reply with a proposal.",
+    otrasFormas: "Other ways to reach us",
+    pProyectosT: "Projects", pProyectosD: "What we have built: websites, systems and demos. Filter by who made it.",
+    pServiciosT: "Services", pServiciosD: "What we can do for your business, who we work for and how we do it.",
+    pPreciosT: "Pricing", pPreciosD: "Reference packages and an instant estimate. The final quote is agreed with you.",
+    pContactoT: "Contact",
     cotizar: "Get a quote", menu: "Menu",
     skip: "Skip to content", back: "Back to portfolio", theme: "Change theme", otroIdioma: "Español", idiomaAria: "Cambiar el idioma a español",
     verDemo: "View demo", verCodigo: "View code", verDetalles: "View details", cerrar: "Close",
@@ -126,7 +133,7 @@ const DATA_EN = {
     perfil: "Profile", perfilDesc: "Profile, skills and projects.", habilidades: "Skills", formacion: "Education", contacto: "Contact",
     proyectosDe: "Projects by ", verPerfilDe: "See the profile of ", sinProyectos: "There are no projects to show yet.", sinCategoria: "There are no projects in this category yet.",
     filtrar: "Filter projects", todos: "All", juntos: "Together", verProyectos: "See our projects", pedirCotizacion: "Request a quote",
-    navAria: "Sections", nProyectos: "Projects", nServicios: "Services", nSectores: "Sectors", nTec: "Technologies", nProceso: "Process", nPaquetes: "Packages", nCotizador: "Estimator", nContacto: "Contact",
+    navAria: "Main", nProyectos: "Projects", nServicios: "Services", nSectores: "Sectors", nTec: "Technologies", nProceso: "Process", nPaquetes: "Pricing", nCotizador: "Estimator", nContacto: "Contact",
     quienes: "Who we are", verPerfil: "View profile",
     srvTitulo: "What we can do for you", resuelve: "Solves:", incluye: "What it includes", pedirInfo: "Ask for information", verEjemplo: "See an example",
     sectoresTitulo: "Who do we work for?", sectoresNota: "We are not limited to these sectors: they are our first markets.",
@@ -141,6 +148,6 @@ const DATA_EN = {
     cTitulo: "Tell us your idea", cWhats: "write to us on WhatsApp", cCorreo: "email", cTambien: "You can also", cO: "or by",
     fNombre: "Your name", fNegocio: "Your business name", fCorreo: "Your email", fServicio: "Type of service you need", fMensaje: "Describe your project", fPresupuesto: "Approximate budget (optional)", fPlaceholder: "E.g. $300", fEnviar: "Send request", fOtro: "Other / not sure",
     fRevisa: "Check that your name, email and message are filled in.", fOk: "Message sent. We will reply soon.", fError: "The message could not be sent. Write to us directly at ", fMailto: "Your email app opened with the message ready to send.", fAsunto: "Contact from the portfolio",
-    waAria: "Write on WhatsApp", pieSecciones: "Sections", pieInicio: "Back to top", pieFaq: "Frequently asked questions", pieServicios: "Services", pieContacto: "Contact", privAviso: "Privacy notice:", derechos: "All rights reserved."
+    waAria: "Write on WhatsApp", pieSecciones: "Pages", pieInicio: "Back to top", pieFaq: "Frequently asked questions", pieServicios: "Services", pieContacto: "Contact", privAviso: "Privacy notice:", derechos: "All rights reserved."
   }
 };

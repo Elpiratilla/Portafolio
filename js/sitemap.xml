@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://TU-DOMINIO/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://TU-DOMINIO/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://TU-DOMINIO/?lang=en"/>
+  </url>
+  <url>
+    <loc>https://TU-DOMINIO/proyectos.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://TU-DOMINIO/proyectos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://TU-DOMINIO/proyectos.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://TU-DOMINIO/servicios.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://TU-DOMINIO/servicios.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://TU-DOMINIO/servicios.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://TU-DOMINIO/precios.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://TU-DOMINIO/precios.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://TU-DOMINIO/precios.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://TU-DOMINIO/contacto.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://TU-DOMINIO/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://TU-DOMINIO/contacto.html?lang=en"/>
+  </url>
+  <url><loc>https://TU-DOMINIO/persona1.html</loc></url>
+  <url><loc>https://TU-DOMINIO/persona2.html</loc></url>
+  <url><loc>https://TU-DOMINIO/demos/menu/index.html</loc></url>
+  <url><loc>https://TU-DOMINIO/demos/inventario/public/index.html</loc></url>
+</urlset>

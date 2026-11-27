@@ -104,16 +104,14 @@ document.addEventListener("click", e => {
 });
 
 
-/* ===== Encabezado: menú, resaltado de sección y sombra al bajar ===== */
-const enIndex = !!$("filters");
-const baseHref = enIndex ? "" : "index.html";
-/* [ancla, texto, elemento que se observa para saber en qué sección vamos] */
-const NAV = [["filters", U.nProyectos, "list"], ["servicios", U.nServicios, "servicios"], ["tecnologias", U.nTec, "tecnologias"],
-             ["proceso", U.nProceso, "proceso"], ["paquetes", U.nPaquetes, "paquetes"], ["cotizador", U.nCotizador, "cotizador"]];
+/* ===== Encabezado: enlaces a cada página, menú de celular y sombra al bajar ===== */
+const PAGINAS = [["index.html", "inicio", U.nInicio], ["proyectos.html", "proyectos", U.nProyectos], ["servicios.html", "servicios", U.nServicios],
+                 ["precios.html", "precios", U.nPaquetes], ["contacto.html", "contacto", U.nContacto]];
+const actual = document.body.dataset.pagina || "";
 const hdr = $("site-header"), nav = $("site-nav"), mbtn = $("menu-btn");
 nav.setAttribute("aria-label", U.navAria);
-nav.innerHTML = NAV.map(([id, t]) => `<a href="${baseHref}#${id}" data-sec="${id}">${esc(t)}</a>`).join("")
-  + `<a class="nav-cta btn" href="${baseHref}#contacto">${esc(U.cotizar)}</a>`;
+nav.innerHTML = PAGINAS.map(([href, id, t]) => `<a href="${href}"${id === actual ? ' aria-current="page"' : ""}>${esc(t)}</a>`).join("")
+  + `<a class="nav-cta btn" href="precios.html#cotizador">${esc(U.cotizar)}</a>`;
 $("bar-cta").textContent = U.cotizar;
 mbtn.setAttribute("aria-label", U.menu);
 
@@ -133,33 +131,20 @@ const marcarScroll = () => hdr.classList.toggle("scrolled", window.scrollY > 8);
 window.addEventListener("scroll", marcarScroll, { passive: true });
 marcarScroll();
 
-/* Resalta en el menú la sección que se está viendo (solo en la página de inicio) */
-if (enIndex && "IntersectionObserver" in window) {
-  const secciones = NAV.map(([id, , el]) => [document.getElementById(el), id]).filter(([el]) => el);
-  const visibles = new Set();
-  const io = new IntersectionObserver(entradas => {
-    entradas.forEach(en => en.isIntersecting ? visibles.add(en.target) : visibles.delete(en.target));
-    const activa = secciones.find(([el]) => visibles.has(el));
-    nav.querySelectorAll("a[data-sec]").forEach(a => a.removeAttribute("aria-current"));
-    if (activa) nav.querySelector(`a[data-sec="${activa[1]}"]`).setAttribute("aria-current", "true");
-  }, { rootMargin: "-30% 0px -60% 0px" });
-  secciones.forEach(([el]) => io.observe(el));
-}
-
 /* ===== Pie de página (el mismo en todas las páginas) ===== */
 (function pintarPie() {
   const g = $("foot-grid"); if (!g) return;
   const gh = P.a.contacto.concat(P.b.contacto).filter(c => c.etiqueta === "GitHub");
-  const enlace = (id, t) => `<li><a href="${baseHref}#${id}">${esc(t)}</a></li>`;
+  const li = (href, t) => `<li><a href="${href}">${esc(t)}</a></li>`;
   g.innerHTML = `
     <div class="foot-brand">
-      <a class="brand" href="${enIndex ? "#inicio" : "index.html"}"><span class="logo" aria-hidden="true"><i></i><i></i></span><span class="brand-t">${esc(T.pie)}</span></a>
+      <a class="brand" href="index.html"><span class="logo" aria-hidden="true"><i></i><i></i></span><span class="brand-t">${esc(T.pie)}</span></a>
       <p>${esc(T.piedesc)}</p>
     </div>
     <nav aria-label="${esc(U.pieSecciones)}"><p class="foot-t">${esc(U.pieSecciones)}</p><ul>
-      ${enlace("filters", U.nProyectos)}${enlace("proceso", U.procesoTitulo)}${enlace("paquetes", U.nPaquetes)}${enlace("cotizador", U.nCotizador)}${enlace("faq", U.pieFaq)}
+      ${PAGINAS.map(([href, , t]) => li(href, t)).join("")}${li("precios.html#faq", U.pieFaq)}
     </ul></nav>
-    <div><p class="foot-t">${esc(U.pieServicios)}</p><ul>${T.servicios.map(s => enlace("servicios", s.titulo)).join("")}</ul></div>
+    <div><p class="foot-t">${esc(U.pieServicios)}</p><ul>${T.servicios.map(s => li("servicios.html", s.titulo)).join("")}</ul></div>
     <div><p class="foot-t">${esc(U.pieContacto)}</p><ul>
       <li><a href="mailto:${esc(correoDe("a"))}">${esc(correoDe("a"))}</a></li>
       ${waLink ? `<li><a href="${esc(waLink)}" target="_blank" rel="noopener">WhatsApp</a></li>` : ""}
