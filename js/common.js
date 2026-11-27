@@ -38,7 +38,7 @@ function proyectoHTML(p) {
   <article class="row${p.img ? " has-shot" : ""}" data-who="${p.quien}">
     <div class="tile" aria-hidden="true">${esc(p.titulo.charAt(0))}</div>
     <div>
-      ${p.img ? `<img class="shot" src="${esc(p.img)}" alt="${esc(U.captura + p.titulo)}" width="1280" height="720" loading="lazy">` : ""}
+      ${p.img ? `<button type="button" class="shot-btn" data-full="${esc(p.img)}" data-alt="${esc(U.captura + p.titulo)}" aria-label="${esc(U.ampliar + p.titulo)}"><img class="shot" src="${esc(p.img)}" alt="${esc(U.captura + p.titulo)}" width="1280" height="720" loading="lazy" decoding="async"></button>` : ""}
       <h2>${esc(p.titulo)}</h2>
       <p class="by">${esc(byLabel(p.quien))}</p>
       ${p.premio ? `<p class="award">${esc(p.premio)}</p>` : ""}
@@ -91,6 +91,15 @@ if (waLink) {
 /* ===== Ventana de detalles de proyecto ===== */
 document.body.insertAdjacentHTML("beforeend", `<dialog id="dlg" aria-labelledby="dlg-t"><div id="dlg-c"></div><button type="button" id="dlg-x">${esc(U.cerrar)}</button></dialog>`);
 const dlg = $("dlg");
+
+/* ===== Visor de capturas: clic en la imagen para ampliarla ===== */
+document.body.insertAdjacentHTML("beforeend", `<dialog id="lb" aria-label="${esc(U.captura)}"><img id="lb-img" alt=""><button type="button" id="lb-x" aria-label="${esc(U.cerrar)}">✕</button></dialog>`);
+const lb = $("lb");
+document.addEventListener("click", e => {
+  const b = e.target.closest(".shot-btn");
+  if (b) { $("lb-img").src = b.dataset.full; $("lb-img").alt = b.dataset.alt; lb.showModal(); }
+  else if (e.target === lb || e.target.id === "lb-x") lb.close();
+});
 document.addEventListener("click", e => {
   const b = e.target.closest(".det");
   if (b) {

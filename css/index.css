@@ -146,6 +146,9 @@ main>section:not(.mis)>h2::before{
 /* Captura de pantalla opcional (campo "img" en data.js) */
 .row.has-shot{display:block}
 .row.has-shot>div:last-child{display:block}
+.shot-btn{display:block;width:100%;padding:0;margin:0;border:0;background:none;cursor:zoom-in;border-radius:10px}
+.shot-btn:focus-visible{outline:3px solid var(--a);outline-offset:3px}
+@media (hover:hover){.shot-btn:hover .shot{filter:brightness(1.04)}}
 .shot{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;margin:0 0 18px;background:var(--c-soft);border:1px solid var(--line)}
 .row.has-shot .tile{display:none}
 
@@ -413,3 +416,10 @@ dd{margin:2px 0 0;color:var(--muted)}
   .site-header,.wa,.filters,.cot-res{display:none!important}
   .site-footer{background:none}
 }
+
+/* Visor de capturas */
+#lb{max-width:min(1200px,94vw);padding:0;border:0;background:transparent;box-shadow:none;overflow:visible}
+#lb::backdrop{background:rgba(8,12,24,.82);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+#lb-img{display:block;max-width:100%;max-height:86vh;margin:0 auto;border-radius:12px;box-shadow:var(--sh-lg)}
+#lb-x{position:absolute;top:-14px;right:-6px;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--ink);background:var(--ink);color:var(--bg);font:600 1.1rem var(--text);cursor:pointer}
+#lb-x:hover{background:var(--a);border-color:var(--a)}

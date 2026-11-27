@@ -126,7 +126,7 @@ const DATA_EN = {
     pContactoT: "Contact",
     cotizar: "Get a quote", menu: "Menu",
     skip: "Skip to content", back: "Back to portfolio", theme: "Change theme", otroIdioma: "Español", idiomaAria: "Cambiar el idioma a español",
-    verDemo: "View demo", verCodigo: "View code", verDetalles: "View details", cerrar: "Close",
+    verDemo: "View demo", verCodigo: "View code", verDetalles: "View details", cerrar: "Close", ampliar: "Enlarge screenshot of ",
     hechoJuntos: "Made by both of us", hechoPor: "Made by ", captura: "Screenshot of ",
     demoDespierta: "The demo runs on a free server and may take about 30 seconds to wake up.",
     objetivo: "Goal", problema: "Problem", solucion: "Solution", resultado: "Result", tecnologias: "Technologies", metricas: "Metrics",

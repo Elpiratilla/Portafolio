@@ -8,11 +8,11 @@ const DATA = {
       nombre: "Mateo Lara",
       pagina: "persona1.html",
       rol: "Desarrollo frontend y backend",
-      foto: "img/mateo.webp", 
+      foto: "", 
       sobre: "Me gusta crear páginas y sistemas web que tengan un propósito y puedan ayudar a las personas. He tenido la oportunidad de trabajar en proyectos como Go 503, donde ayudé a desarrollar una forma de rastrear buses y conocer sus horarios de llegada, y Sin Límites, un proyecto relacionado con la inclusión digital. Me gusta seguir aprendiendo y mejorar mis habilidades, actualmente estoy explorando Node.js y bases de datos. Mi objetivo es seguir ganando experiencia, trabajar en nuevos proyectos y crecer poco a poco como desarrollador.",
       habilidades: ["HTML", "CSS", "JavaScript", "Node.js", "SQL", "PHP"],
       formacion: [
-        { titulo: "Carrera: Desarrollo de software", lugar: "Colegio Don Bosco", fecha: "2016 – actualidad" }
+        { titulo: "Carrera: Desarrollo de software", lugar: "Universidad Don Bosco", fecha: "2026 – actualidad" }
       ],
       contacto: [
         { etiqueta: "Correo", valor: "folgiodigital2@gmail.com", href: "mailto:folgiodigital2@gmail.com" },
@@ -23,11 +23,11 @@ const DATA = {
       nombre: "Iker Mejia",
       pagina: "persona2.html",
       rol: "Desarrollo frontend y backend",
-      foto: "img/iker.webp",
+      foto: "",
       sobre: "Me interesa crear experiencias web útiles y fáciles de usar. He trabajado en Blue's, un proyecto de musicoterapia, y Rest, una tienda de comida. Sigo aprendiendo desarrollo web y fortaleciendo mis habilidades de programación.",
       habilidades: ["HTML", "CSS", "JavaScript", "SQL", "PHP"],
       formacion: [
-        { titulo: "Carrera: Desarrollo de software", lugar: "Colegio Don Bosco", fecha: "2014 – actualidad" }
+        { titulo: "Carrera: Desarrollo de software", lugar: "Universidad Don Bosco", fecha: "2026 – actualidad" }
       ],
       contacto: [
         { etiqueta: "Correo", valor: "folgiodigital2@gmail.com", href: "mailto:folgiodigital2@gmail.com" },
@@ -37,42 +37,42 @@ const DATA = {
   },
   proyectos: [
     {
-      titulo: "Go 503", quien: "a", img: "",
+      titulo: "Go 503", quien: "a", img: "img/capturas/go-503.jpg",
       desc: "Rastreo de autobuses para saber a qué hora llegan y por dónde pasan.",
       premio: "",
       tags: ["HTML", "CSS", "JavaScript", "Node.js", "SQL"],
       demo: "https://go503.onrender.com", codigo: "https://github.com/Elpiratilla/bus-tracker"
     },
     {
-      titulo: "Sin límites", quien: "a", img: "",
+      titulo: "Sin límites", quien: "a", img: "img/capturas/sin-limites.jpg",
       desc: "Proyecto para promover la inclusión digital.",
       premio: "1.er lugar · CREA J · Colegio Don Bosco (primer año de bachillerato)",
       tags: ["HTML", "CSS", "JavaScript", "PHP"],
       demo: "https://sinlimites.lat/Inicio", codigo: "https://github.com/Elpiratilla/paginacrea1"
     },
     {
-      titulo: "Blue's", quien: "b", img: "",
+      titulo: "Blue's", quien: "b", img: "img/capturas/blue-s.jpg",
       desc: "Proyecto de musicoterapia.",
       premio: "2.º lugar · CREA J · Colegio Don Bosco (primer año de bachillerato)",
       tags: ["HTML", "CSS", "JavaScript"],
       demo: "https://creaj.onrender.com/html/start.html", codigo: "https://github.com/alem3jia774-byte/BLUES"
     },
     {
-      titulo: "Rest", quien: "b", img: "",
+      titulo: "Rest", quien: "b", img: "img/capturas/rest.jpg",
       desc: "Proyecto de tienda de comida.",
       premio: "",
       tags: ["HTML", "CSS", "JavaScript"],
       demo: "https://rest-eqwm.onrender.com/index.html", codigo: "https://github.com/alem3jia774-byte/Rest.git"
     },
     {
-      titulo: "Menú digital con QR", quien: "j", img: "",
+      titulo: "Menú digital con QR", quien: "j", img: "img/capturas/menu-digital-con-qr.jpg",
       desc: "Demo de menú digital para restaurantes: categorías, búsqueda y código QR descargable.",
       premio: "",
       tags: ["HTML", "CSS", "JavaScript"],
       demo: "demos/menu/index.html", codigo: "https://github.com/Elpiratilla/Portafolio/tree/main/demos/menu"
     },
     {
-      titulo: "Inventario", quien: "j", img: "",
+      titulo: "Inventario", quien: "j", img: "img/capturas/inventario.jpg",
       desc: "Demo de sistema de inventario: productos, stock mínimo con alerta y valor total, con API en Node.js y base de datos SQLite.",
       premio: "",
       tags: ["JavaScript", "Node.js", "SQL"],
@@ -197,7 +197,7 @@ const DATA = {
     pContactoT: "Contacto",
     cotizar: "Cotizar", menu: "Menú",
     skip: "Saltar al contenido", back: "Volver al portafolio", theme: "Cambiar tema", otroIdioma: "English", idiomaAria: "Cambiar el idioma a inglés",
-    verDemo: "Ver demo", verCodigo: "Ver código", verDetalles: "Ver detalles", cerrar: "Cerrar",
+    verDemo: "Ver demo", verCodigo: "Ver código", verDetalles: "Ver detalles", cerrar: "Cerrar", ampliar: "Ampliar captura de ",
     hechoJuntos: "Hecho por los dos", hechoPor: "Hecho por ", captura: "Captura de ",
     demoDespierta: "La demo está en un servidor gratuito y puede tardar unos 30 segundos en despertar.",
     objetivo: "Objetivo", problema: "Problema", solucion: "Solución", resultado: "Resultado", tecnologias: "Tecnologías", metricas: "Métricas",
@@ -225,4 +225,4 @@ const DATA = {
   pie: "Mateo Lara e Iker Mejia",
   piedesc: "Desarrolladores web y de sistemas en El Salvador.",
   privacidad: "Usamos los datos que nos envías solo para responder a tu solicitud. No los compartimos con terceros."
-};
+};  
