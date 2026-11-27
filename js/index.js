@@ -8,19 +8,7 @@ $("titulo").textContent = H.titulo;
 $("intro").textContent = H.texto;
 $("intro").insertAdjacentHTML("afterend",
   `<div class="cta"><a class="btn" href="#filters">${esc(U.verProyectos)}</a><a class="btn alt" href="#contacto">${esc(U.pedirCotizacion)}</a></div>
-  <p class="linea">${esc(H.linea)}</p>
-  <nav class="nav" aria-label="${esc(U.navAria)}">
-    <a href="#filters">${esc(U.nProyectos)}</a>
-    <a href="#servicios">${esc(U.nServicios)}</a>
-    <a href="#sectores">${esc(U.nSectores)}</a>
-    <a href="#tecnologias">${esc(U.nTec)}</a>
-    <a href="#proceso">${esc(U.nProceso)}</a>
-    <a href="#paquetes">${esc(U.nPaquetes)}</a>
-    <a href="#cotizador">${esc(U.nCotizador)}</a>
-    <a href="#contacto">${esc(U.nContacto)}</a>
-    <a href="${esc(P.a.pagina)}">${esc(primerNombre(P.a.nombre))}</a>
-    <a href="${esc(P.b.pagina)}">${esc(primerNombre(P.b.nombre))}</a>
-  </nav>`);
+  <p class="linea">${esc(H.linea)}</p>`);
 $("filters").setAttribute("aria-label", U.filtrar);
 
 const hayJuntos = T.proyectos.some(p => p.quien === "j");
@@ -209,11 +197,3 @@ if (wa && "IntersectionObserver" in window) {
   new IntersectionObserver(([en]) => wa.classList.toggle("oculto", en.isIntersecting), { rootMargin: "0px 0px -10% 0px" })
     .observe($("form"));
 }
-
-/* ===== Footer ===== */
-$("foot-grid").innerHTML = `<div><strong>${esc(T.pie)}</strong><p>${esc(T.piedesc)}</p></div>
-  <div><strong>${esc(U.pieSecciones)}</strong><ul><li><a href="#inicio">${esc(U.pieInicio)}</a></li><li><a href="#filters">${esc(U.nProyectos)}</a></li><li><a href="#proceso">${esc(U.procesoTitulo)}</a></li><li><a href="#faq">${esc(U.pieFaq)}</a></li></ul></div>
-  <div><strong>${esc(U.pieServicios)}</strong><ul>${T.servicios.map(s => `<li>${esc(s.titulo)}</li>`).join("")}</ul></div>
-  <div><strong>${esc(U.pieContacto)}</strong><ul><li><a href="mailto:${esc(correoDe("a"))}">${esc(correoDe("a"))}</a></li>${P.a.contacto.concat(P.b.contacto).filter(c => c.etiqueta === "GitHub").map(c => `<li><a href="${esc(c.href)}" target="_blank" rel="noopener">GitHub · ${esc(c.valor.split("/").pop())}</a></li>`).join("")}</ul></div>
-  <p class="priv"><strong>${esc(U.privAviso)}</strong> ${esc(T.privacidad)}</p>`;
-$("foot").textContent = "© " + new Date().getFullYear() + " " + T.pie + ". " + U.derechos;

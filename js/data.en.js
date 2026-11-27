@@ -117,6 +117,7 @@ const DATA_EN = {
   privacidad: "We use the data you send us only to reply to your request. We do not share it with third parties.",
 
   ui: {
+    cotizar: "Get a quote", menu: "Menu",
     skip: "Skip to content", back: "Back to portfolio", theme: "Change theme", otroIdioma: "Español", idiomaAria: "Cambiar el idioma a español",
     verDemo: "View demo", verCodigo: "View code", verDetalles: "View details", cerrar: "Close",
     hechoJuntos: "Made by both of us", hechoPor: "Made by ", captura: "Screenshot of ",

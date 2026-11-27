@@ -188,6 +188,7 @@ const DATA = {
   },
 
   ui: {
+    cotizar: "Cotizar", menu: "Menú",
     skip: "Saltar al contenido", back: "Volver al portafolio", theme: "Cambiar tema", otroIdioma: "English", idiomaAria: "Cambiar el idioma a inglés",
     verDemo: "Ver demo", verCodigo: "Ver código", verDetalles: "Ver detalles", cerrar: "Cerrar",
     hechoJuntos: "Hecho por los dos", hechoPor: "Hecho por ", captura: "Captura de ",

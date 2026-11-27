@@ -34,10 +34,25 @@
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
 <noscript><div class="wrap"><p><strong>Este portafolio necesita JavaScript para mostrar los proyectos.</strong> Mateo Lara e Iker Mejia, desarrolladores web y de sistemas en El Salvador. Escríbenos a <a href="mailto:folgiodigital2@gmail.com">folgiodigital2@gmail.com</a> o mira nuestro código en <a href="https://github.com/Elpiratilla">GitHub</a>.</p></div></noscript>
-<header class="wrap hero" id="inicio">
+<header class="site-header" id="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#inicio" aria-label="Mateo Lara e Iker Mejia"><span class="logo" aria-hidden="true"><i></i><i></i></span><span class="brand-t">Mateo <em>&amp;</em> Iker</span></a>
+    <nav class="site-nav" id="site-nav" aria-label="Secciones">
+      <a href="#filters">Proyectos</a><a href="#servicios">Servicios</a><a href="#proceso">Proceso</a><a href="#paquetes">Paquetes</a><a href="#cotizador">Cotizador</a>
+    </nav>
+    <div class="bar-tools">
+      <button type="button" id="lang" class="tool">English</button>
+      <button type="button" id="theme" class="tool" aria-label="Cambiar tema" title="Cambiar tema"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3.5a8.5 8.5 0 0 0 0 17z" fill="currentColor"/></svg></button>
+      <a class="btn sm bar-cta" id="bar-cta" href="#contacto">Cotizar</a>
+      <button type="button" id="menu-btn" class="tool menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Menú"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="wrap hero" id="inicio" aria-labelledby="titulo">
   <h1 id="titulo">Convertimos tus ideas en soluciones digitales.</h1>
   <p id="intro">Somos un equipo de desarrolladores enfocados en crear páginas web y sistemas personalizados que ayudan a negocios y emprendedores a mejorar sus procesos y crecer en el mundo digital.</p>
-</header>
+</section>
 
 <main class="wrap" id="main">
   <div class="filters" id="filters" role="group" aria-label="Filtrar proyectos"></div>
@@ -55,10 +70,11 @@
   <section class="contacto" id="contacto"></section>
 </main>
 
-<footer class="wrap">
-  <div class="foot-grid" id="foot-grid"></div>
-  <div id="foot"></div>
-  <button type="button" id="theme">Cambiar tema</button><button type="button" id="lang">English</button>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid" id="foot-grid"></div>
+    <div class="foot-bottom"><p id="foot"></p><a class="to-top" id="to-top" href="#">↑ Volver al inicio</a></div>
+  </div>
 </footer>
 
 <script src="js/data.js"></script>

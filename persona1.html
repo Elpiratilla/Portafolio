@@ -26,9 +26,24 @@
 <body data-persona="a">
 <a class="skip" href="#main">Saltar al contenido</a>
 <noscript><div class="wrap"><p><strong>Esta página necesita JavaScript para mostrar el perfil de Mateo Lara.</strong> <a href="index.html">Volver al portafolio</a>.</p></div></noscript>
-<header class="wrap top">
-    <a class="back" href="index.html">Volver al portafolio</a>
+<header class="site-header" id="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Mateo Lara e Iker Mejia"><span class="logo" aria-hidden="true"><i></i><i></i></span><span class="brand-t">Mateo <em>&amp;</em> Iker</span></a>
+    <nav class="site-nav" id="site-nav" aria-label="Secciones">
+      <a href="index.html#filters">Proyectos</a><a href="index.html#servicios">Servicios</a><a href="index.html#proceso">Proceso</a><a href="index.html#paquetes">Paquetes</a><a href="index.html#cotizador">Cotizador</a>
+    </nav>
+    <div class="bar-tools">
+      <button type="button" id="lang" class="tool">English</button>
+      <button type="button" id="theme" class="tool" aria-label="Cambiar tema" title="Cambiar tema"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3.5a8.5 8.5 0 0 0 0 17z" fill="currentColor"/></svg></button>
+      <a class="btn sm bar-cta" id="bar-cta" href="index.html#contacto">Cotizar</a>
+      <button type="button" id="menu-btn" class="tool menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Menú"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg></button>
+    </div>
+  </div>
 </header>
+
+<div class="wrap top">
+    <a class="back" href="index.html">Volver al portafolio</a>
+</div>
 
 <main class="wrap" id="main">
     <div id="perfil"></div>
@@ -39,9 +54,11 @@
     <a class="otro" id="otro" href="index.html"></a>
 </main>
 
-<footer class="wrap">
-    <div id="foot"></div>
-    <button type="button" id="theme">Cambiar tema</button><button type="button" id="lang">English</button>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid" id="foot-grid"></div>
+    <div class="foot-bottom"><p id="foot"></p><a class="to-top" id="to-top" href="#">↑ Volver al inicio</a></div>
+  </div>
 </footer>
 
 <script src="js/data.js"></script>
